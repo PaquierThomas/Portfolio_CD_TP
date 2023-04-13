@@ -1,13 +1,18 @@
 ---
-import testImage from '../assets/image/4.png'
+import testImage from '../assets/image/3.png'
 
 import '../styles/font.css'
 ---
 
 <main class='main'>
   <div class='wrapper'>
-    <h2 class='first'>KAWASAKI THE</h2>
-    <h2 class='last'>KAWASAKI THE</h2>
+    <div>
+        <h2 class='first'>KAZUKI <br/> PORTFOLIO</h2>
+        
+    </div>
+    <div>
+        <h2 class='last'>KAZUKI <br/> PORTFOLIO</h2>
+    </div>
     <img src={testImage} />
   </div>
 </main>
@@ -25,13 +30,20 @@ import '../styles/font.css'
   }
 
   .wrapper h2 {
+    top:50%;
+    min-height: 150px;
+    line-height: 100%;
+    letter-spacing: 0px;
     color: white;
-    transform: scale(1.2);
-    transition: all 0.8s ease;
-    font-size: 20px;
+    transform:  scale(1.15);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    font-size: 5vw;
+    font-weight: 800;
+    font-style: normal;
     position: absolute;
-    top: 0;
-    font-family: aktiv-grotesk-extended;
+    left: 13%;
+    top: 130px;
+    font-family: aktiv-grotesk-extended, sans-serif;
   }
 
   h2.last {
@@ -41,13 +53,19 @@ import '../styles/font.css'
   }
 
   h2.active {
-    font-size: 40px;
+    position: absolute;
+    font-size: 6vw;
+    transform: translateX(-15%);
+    top: 80px;
   }
 
   .wrapper img {
     position: absolute;
-    left: 130px;
-    transition: all 0.8s ease;
+    width: 1000px;
+    height: auto;
+    left: 40%;
+    
+    transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
     /* transform: scale(1); */
   }
 
