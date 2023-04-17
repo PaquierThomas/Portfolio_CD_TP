@@ -1,77 +1,133 @@
 ---
 import testImage from '../assets/image/3.png'
 
-import '../styles/font.css'
+import '../styles/global.css'
 ---
 
 <main class='main'>
-  <div class='wrapper'>
-    <div>
-        <h2 class='first'>KAZUKI <br/> PORTFOLIO</h2>
-        
+  <section class='projets'>
+    <div class='wrapper'>
+      <div class='titles'>
+        <h2 class='first'>KAZUKI <br /> PORTFOLIO</h2>
+        <h2 class='last'>KAZUKI <br /> PORTFOLIO</h2>
+      </div>
+      <img src={testImage} />
     </div>
-    <div>
-        <h2 class='last'>KAZUKI <br/> PORTFOLIO</h2>
-    </div>
-    <img src={testImage} />
-  </div>
+  </section>
 </main>
 
 <style>
-  .main {
+  .projets {
     height: 100vh;
+    width: 100vw;
     background: #333;
-    padding: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .wrapper {
     font-family: aktiv-grotesk, sans-serif;
     position: relative;
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .wrapper h2 {
-    top:50%;
-    min-height: 150px;
-    line-height: 100%;
-    letter-spacing: 0px;
-    color: white;
-    transform:  scale(1.15);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    font-size: 5vw;
-    font-weight: 800;
-    font-style: normal;
-    position: absolute;
-    left: 13%;
-    top: 130px;
+  .titles {
+    position: relative;
+    height: 100%;
+    width: 35%;
+    left: 11%;
+  }
+
+  .titles h2 {
     font-family: aktiv-grotesk-extended, sans-serif;
+    font-weight: 800;
+    font-size: 6vw;
+    font-style: normal;
+    letter-spacing: 0;
+    position: absolute;
+    line-height: 100%;
+    transform: translateY(50%);
   }
 
-  h2.last {
+  .titles h2.last {
     color: transparent;
-    -webkit-text-stroke: 1px white;
+    -webkit-text-stroke: 2px white;
     z-index: 10;
   }
 
-  h2.active {
-    position: absolute;
-    font-size: 6vw;
-    transform: translateX(-15%);
-    top: 80px;
+  .wrapper img {
+    /* position: relative; */
+    /* width: auto; */
+    height: 100%;
+    z-index: 5;
+    /* right: 10%; */
+    /* min-width: 500px; */
+    /* position: absolute; */
   }
 
+  .wrapper h2 {
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
   .wrapper img {
-    position: absolute;
-    width: 1000px;
-    height: auto;
-    left: 40%;
-    
     transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .wrapper h2.active {
+    font-size: 7vw;
+  }
+
+  .wrapper img.active {
+    transform: scale(1.2);
+  }
+
+  .wrapper h2 {
+    /* top: 0;
+    bottom: 0;
+    min-height: 150px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    color: white; */
+    /* transform: scale(1.15); */
+    /* transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    font-size: 5vw;
+    font-weight: 800;
+    font-style: normal; */
+    /* position: absolute; */
+    /* left: 13%;
+    font-family: aktiv-grotesk-extended, sans-serif; */
+  }
+
+  /* h2.last {
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+    z-index: 10;
+  } */
+
+  /* .wrapper:hover h2 {
+    position: absolute;
+    font-size: 7vw;
+    transform: translateX(-15%);
+    top: 80px;
+  } */
+
+  .wrapper img {
+    /* position: absolute; */
+    /* width: auto;
+    height: 150px;
+    left: 40%;
+
+    transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); */
     /* transform: scale(1); */
   }
 
-  .active {
+  /* .wrapper:hover img {
     transform: scale(1.2);
-  }
+  } */
 </style>
 
 <script>
