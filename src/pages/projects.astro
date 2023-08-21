@@ -11,7 +11,7 @@ import '../styles/global.css'
         <h2 class='first'>KAZUKI <br /> PORTFOLIO</h2>
         <h2 class='last'>KAZUKI <br /> PORTFOLIO</h2>
       </div>
-      <img src={testImage} />
+      <div class='image'><img src={testImage} /></div>
     </div>
   </section>
 </main>
@@ -24,11 +24,12 @@ import '../styles/global.css'
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
   }
 
   .wrapper {
     font-family: aktiv-grotesk, sans-serif;
-    position: relative;
+    position: fixed;
     height: 60%;
     width: 100%;
     display: flex;
@@ -40,18 +41,20 @@ import '../styles/global.css'
     position: relative;
     height: 100%;
     width: 35%;
-    left: 11%;
+    left: 13%;
   }
 
   .titles h2 {
     font-family: aktiv-grotesk-extended, sans-serif;
     font-weight: 800;
     font-size: 6vw;
+    color: white;
     font-style: normal;
     letter-spacing: 0;
     position: absolute;
     line-height: 100%;
-    transform: translateY(50%);
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .titles h2.last {
@@ -63,11 +66,33 @@ import '../styles/global.css'
   .wrapper img {
     /* position: relative; */
     /* width: auto; */
-    height: 100%;
+    min-width: 30%;
+
+    height: 85%;
     z-index: 5;
+
     /* right: 10%; */
     /* min-width: 500px; */
     /* position: absolute; */
+  }
+  .image {
+    position: relative;
+  }
+
+  .image::after {
+    transition: all 0.85s cubic-bezier(0.165, 0.84, 0.44, 1);
+    content: '';
+    background: rgb(162, 116, 210);
+    padding-bottom: -20px;
+    opacity: 0.2;
+    width: 100%;
+    height: 98.5%;
+    top: 0;
+    left: 0;
+    position: absolute;
+  }
+  .image.active::after {
+    background: none;
   }
 
   .wrapper h2 {
@@ -81,7 +106,8 @@ import '../styles/global.css'
     font-size: 7vw;
   }
 
-  .wrapper img.active {
+  .wrapper .image.active img,
+  .wrapper .image.active::after {
     transform: scale(1.2);
   }
 
@@ -135,7 +161,7 @@ import '../styles/global.css'
     'mouseover',
     () => {
       const titles = document.querySelectorAll('h2')
-      const img = document.querySelector('img')!
+      const img = document.querySelector('.image')!
 
       titles.forEach((title) => title.classList.add('active'))
       img.classList.add('active')
@@ -145,7 +171,7 @@ import '../styles/global.css'
     'mouseout',
     () => {
       const titles = document.querySelectorAll('h2')
-      const img = document.querySelector('img')!
+      const img = document.querySelector('.image')!
 
       titles.forEach((title) => title.classList.remove('active'))
       img.classList.remove('active')
