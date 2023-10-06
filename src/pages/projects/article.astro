@@ -77,7 +77,7 @@ import '../../styles/global.css'
       <div
         class='bg-border'
         style='will-change: transform;
-transform: translate3d(0px, 0px, 0px) scale3d(1.33474, 1.03347, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg);
+transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg);
 transform-style: preserve-3d;'
       >
       </div>
@@ -105,9 +105,23 @@ transform-style: preserve-3d;'
   </section> -->
 </main>
 
+<script>
+  const bgBorder = document.querySelector('.bg-border') as HTMLElement
+  const triggerPosition = bgBorder.offsetTop + 1180
+
+  window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY
+    const scale = scrollPosition / triggerPosition
+
+    if (scrollPosition >= triggerPosition) {
+      bgBorder.style.transform = `scaleX(${scale})`
+    }
+  })
+</script>
+
 <style>
   body {
-    background-color: darkslateblue;
+    background-color: white;
   }
 
   /* .wrapper-intro {
@@ -424,7 +438,7 @@ transform-style: preserve-3d;'
     overflow: visible;
     height: auto;
     border-style: solid;
-    border-width: 10vw;
+    border-width: 195px 180px;
     border-color: #fff;
   }
 

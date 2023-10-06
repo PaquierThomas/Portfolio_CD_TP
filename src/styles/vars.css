@@ -1,0 +1,22 @@
+/* @import url('function.css'); */
+
+:root {
+  --primary-color: #f48e28;
+  --secondary-color: #f5ddc4;
+
+  --tiny-font-size: 10px;
+  --small-font-size: 14px;
+  --regular-font-size: 18px;
+  --medium-font-size: 24px;
+  --medium-large-font-size: 36px;
+  --large-font-size: 48px;
+  --big-font-size: 60px;
+  --bigger-font-size: 72px;
+  --giant-font-size: 84px;
+
+  --primary-font-family: Aktiv Grotesk, sans-serif;
+
+  --small: 600px;
+  --medium: 760px;
+  --large: 960px;
+}

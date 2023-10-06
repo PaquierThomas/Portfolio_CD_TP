@@ -1,0 +1,156 @@
+---
+import '../../styles/global.css'
+---
+
+<body>
+  <div class='container'>
+    <div class='intro'>
+      <h2 class='intro_icon'>ART.GAL</h2>
+
+      <h2 class='intro_titre'>Follow the art</h2>
+      <p class='intro_description'>
+        No doubt the artist is the child of his time; but woe to him if he is
+        also its disciple, or even its favorite.
+      </p>
+    </div>
+    <div class='grid'>
+      <div class='col_blue'>
+        <h2 class='col_titre'>Galleries</h2>
+      </div>
+      <div class='col_red'>
+        <h2 class='col_titre'>Calendar</h2>
+      </div>
+      <div class='col_yellow'>
+        <h2 class='col_titre'>Explore</h2>
+      </div>
+      <div class='col_brown'>
+        <h2 class='col_titre'>Contact</h2>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script>
+  const grid = document.querySelector('.grid') as HTMLElement
+  const items = document.querySelectorAll('.grid > div')
+
+  items.forEach((item, index) => {
+    item.addEventListener('mouseenter', () => {
+      const values = Array(items.length).fill('1fr')
+      if (index > 0) {
+        values[index - 1] = '0.8fr'
+      }
+      values[index] =
+        index === 0 || index === values.length - 1 ? '1.2fr' : '1.4fr'
+      if (index < items.length - 1) {
+        values[index + 1] = '0.8fr'
+      }
+      grid.style.gridTemplateColumns = values.join(' ')
+    })
+    item.addEventListener('mouseleave', () => {
+      grid.style.gridTemplateColumns = Array(items.length).fill('1fr').join(' ')
+    })
+  })
+</script>
+
+<style scoped>
+  body {
+    margin: 0px;
+    padding: 0px;
+  }
+  h2 {
+    font-family: var(--bigger-font-size);
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+  }
+  .intro {
+    /* background: #cd8383; */
+    width: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    gap: 40px;
+    top: 25%;
+    /* justify-content: center; */
+    padding-right: 24%;
+    padding-left: 40px;
+    /* padding-left: 10%; */
+    /* align-items: center; */
+  }
+  .intro_icon {
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+  }
+  .intro_titre {
+    font-size: var(--giant-font-size);
+    font-family: var(--primary-font-family);
+    line-height: 1;
+  }
+  .intro_description {
+    font-size: var(--regular-font-size);
+    font-family: var(--primary-font-family);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 50%;
+    grid-gap: 7px;
+    transition: 0.3s;
+    /* transition: ease-in-out 0.3s; */
+  }
+  .col_titre {
+    display: flex;
+    position: absolute;
+    margin-bottom: 120px;
+    font-size: var(--big-font-size);
+    font-family: var(--primary-font-family);
+    transform: rotate(-90deg);
+    color: white;
+    /* transform: rotate(-90deg); */
+  }
+  .col_blue {
+    position: relative;
+    background: #00f;
+    border-width: 20px solid white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+  }
+  .col_red {
+    background: #f00;
+    position: relative;
+
+    border-width: 20px solid white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+  }
+  .col_yellow {
+    background: #ff0;
+    border-width: 20px solid white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+  }
+  .col_brown {
+    background: purple;
+    border-width: 20px solid white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+  }
+</style>
