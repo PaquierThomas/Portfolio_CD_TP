@@ -1,5 +1,10 @@
 ---
 import '../../styles/global.css'
+import '../../assets/icons/fleche.svg'
+import blueVideo from '../../../public/video/blue_anim.mp4'
+import yellowVideo from '../../../public/video/yellow_anim.mp4'
+import orangeVideo from '../../../public/video/orange_anim.mp4'
+import purpleVideo from '../../../public/video/purple_anim.mp4'
 ---
 
 <body>
@@ -18,11 +23,16 @@ import '../../styles/global.css'
     <div class='grid'>
       <div class='col_blue'>
         <img
-          src='https://cdn4.iconfinder.com/data/icons/budicon-arrow/25/arrow-top-right-a-512.png'
+          src='../../assets/icons/fleche.svg'
           alt='une flèche qui pointe vers une autre page'
+          height='50px'
+          width='50px'
           class='col_icon'
         />
         <h2 class='col_titre'>Galleries</h2>
+        <video loop muted>
+          <source src={blueVideo} type='video/mp4' />
+        </video>
       </div>
       <div class='col_red'>
         <img
@@ -31,6 +41,9 @@ import '../../styles/global.css'
           class='col_icon'
         />
         <h2 class='col_titre'>Calendar</h2>
+        <video loop muted>
+          <source src={yellowVideo} type='video/mp4' />
+        </video>
       </div>
       <div class='col_yellow'>
         <img
@@ -39,14 +52,20 @@ import '../../styles/global.css'
           class='col_icon'
         />
         <h2 class='col_titre'>Explore</h2>
+        <video loop muted>
+          <source src={orangeVideo} type='video/mp4' />
+        </video>
       </div>
-      <div class='col_brown'>
+      <div class='col_purple'>
         <img
           src='https://cdn4.iconfinder.com/data/icons/budicon-arrow/25/arrow-top-right-a-512.png'
           alt='une flèche qui pointe vers une autre page'
           class='col_icon'
         />
         <h2 class='col_titre'>Contact</h2>
+        <video loop muted>
+          <source src={purpleVideo} type='video/mp4' />
+        </video>
       </div>
     </div>
   </div>
@@ -71,6 +90,17 @@ import '../../styles/global.css'
     })
     item.addEventListener('mouseleave', () => {
       grid.style.gridTemplateColumns = Array(items.length).fill('1fr').join(' ')
+    })
+  })
+
+  //  Play video on hover
+  const videos = document.querySelectorAll('video')
+  videos.forEach((video) => {
+    video.addEventListener('mouseenter', () => {
+      video.play()
+    })
+    video.addEventListener('mouseleave', () => {
+      video.pause()
     })
   })
 </script>
@@ -113,6 +143,9 @@ import '../../styles/global.css'
     font-family: var(--primary-font-family);
     line-height: 1;
     padding-right: 45%;
+    font-family: 'RemoraSans', sans-serif;
+    /* font-style: italic; */
+    font-weight: 700;
   }
   .intro_description {
     font-size: var(--regular-font-size);
@@ -157,10 +190,20 @@ import '../../styles/global.css'
     justify-content: end;
     align-items: center;
   }
-  .col_red {
-    background: #f00;
-    position: relative;
+  .col_blue video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  .col_blue h2 {
+    z-index: 1;
+  }
 
+  .col_red {
+    position: relative;
+    background: #f00;
     border-width: 20px solid white;
 
     display: flex;
@@ -168,7 +211,18 @@ import '../../styles/global.css'
     justify-content: end;
     align-items: center;
   }
+  .col_red video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  .col_red h2 {
+    z-index: 1;
+  }
   .col_yellow {
+    position: relative;
     background: #ff0;
     border-width: 20px solid white;
 
@@ -177,7 +231,18 @@ import '../../styles/global.css'
     justify-content: end;
     align-items: center;
   }
-  .col_brown {
+  .col_yellow video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  .col_yellow h2 {
+    z-index: 1;
+  }
+  .col_purple {
+    position: relative;
     background: purple;
     border-width: 20px solid white;
 
@@ -185,5 +250,15 @@ import '../../styles/global.css'
     flex-direction: column;
     justify-content: end;
     align-items: center;
+  }
+  .col_purple video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  .col_purple h2 {
+    z-index: 1;
   }
 </style>
