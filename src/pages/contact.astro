@@ -1,0 +1,90 @@
+---
+import '../styles/global.css'
+---
+
+<body>
+  <section class='container'>
+    <div class='section_content'>
+      <h2 class='section_title'><span>Accelerated speed</span> to market</h2>
+      <p class='section_summary'>
+        While choosing to upgrade the game to a Stadia-supported UE4 version was
+        a great way to minimize the risk of delaying the product, we still
+        needed to act wisely to speed up our development process.
+      </p>
+      <div class='section_description'>
+        <p>
+          We properly organized our Gitlab repository so developers could commit
+          code to a test branch first and push it to the main branch only after
+          it successfully passes the review. We also created a wiki to share
+          information with our team and make new people quickly jump into the
+          project. We worked efficiently during development as well. For
+          example, Dontnod implemented a custom engine to achieve cinema-quality
+          3D animation. Given that the conventional way of porting this
+          functionality to a new platform would not allow us to achieve the
+          desired acceleration in delivery, we optimized our pipeline to
+          decrease the amount of work needed to move the animation to the new
+          platforms.
+        </p>
+        <p>
+          Initially, Square Enix wanted to ramp up our team at Dragons Lake
+          gradually to tackle increasing complexity. But because we did a great
+          job at organizing and managing our work process, they decided to get a
+          bigger team from the start. Life Is Strange 2 game porting was handled
+          by a team of several engineers working in parallel to build
+          independent game modules. We established goals, tracked progress, and
+          accomplished project objectives in a timely manner. In fact, our
+          approach to work and effective risk management resulted in a fast time
+          to market. We accomplished major milestones ahead of schedule and
+          spent the rest of the time fixing bugs and optimizing performance.a
+        </p>
+      </div>
+    </div>
+  </section>
+</body>
+
+<style scoped>
+  body {
+    background: black;
+  }
+
+  .container {
+    font-family: var(--article-font-family);
+
+    height: auto;
+    min-height: 715px;
+    color: white;
+    padding: 60px 110px;
+    margin: 0 auto;
+    width: 1440px;
+    max-width: 100%;
+  }
+  .section_title {
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 60px;
+  }
+  .section_title span {
+    color: #44e9ff;
+  }
+
+  .section_content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .section_summary {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 40px;
+  }
+  .section_description {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 60px;
+    grid-row-gap: 30px;
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+  }
+</style>

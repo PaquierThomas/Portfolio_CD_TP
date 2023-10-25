@@ -1,6 +1,6 @@
 ---
 import '../../styles/global.css'
-import '../../assets/icons/fleche.svg'
+import myFleche from '../../../public/fleche.svg'
 import blueVideo from '../../../public/video/blue_anim.mp4'
 import yellowVideo from '../../../public/video/yellow_anim.mp4'
 import orangeVideo from '../../../public/video/orange_anim.mp4'
@@ -23,7 +23,7 @@ import purpleVideo from '../../../public/video/purple_anim.mp4'
     <div class='grid'>
       <div class='col_blue'>
         <img
-          src='../../assets/icons/fleche.svg'
+          src={myFleche}
           alt='une flèche qui pointe vers une autre page'
           height='50px'
           width='50px'
@@ -36,7 +36,7 @@ import purpleVideo from '../../../public/video/purple_anim.mp4'
       </div>
       <div class='col_red'>
         <img
-          src='https://cdn4.iconfinder.com/data/icons/budicon-arrow/25/arrow-top-right-a-512.png'
+          src={myFleche}
           alt='une flèche qui pointe vers une autre page'
           class='col_icon'
         />
@@ -47,7 +47,7 @@ import purpleVideo from '../../../public/video/purple_anim.mp4'
       </div>
       <div class='col_yellow'>
         <img
-          src='https://cdn4.iconfinder.com/data/icons/budicon-arrow/25/arrow-top-right-a-512.png'
+          src={myFleche}
           alt='une flèche qui pointe vers une autre page'
           class='col_icon'
         />
@@ -58,7 +58,7 @@ import purpleVideo from '../../../public/video/purple_anim.mp4'
       </div>
       <div class='col_purple'>
         <img
-          src='https://cdn4.iconfinder.com/data/icons/budicon-arrow/25/arrow-top-right-a-512.png'
+          src={myFleche}
           alt='une flèche qui pointe vers une autre page'
           class='col_icon'
         />
@@ -196,6 +196,13 @@ import purpleVideo from '../../../public/video/purple_anim.mp4'
     z-index: 0;
   }
   .col_blue h2 {
+    z-index: 1;
+  }
+  .col_blue img {
+    color: white;
+    stroke: white;
+    width: 100px;
+    height: 100px;
     z-index: 1;
   }
 
