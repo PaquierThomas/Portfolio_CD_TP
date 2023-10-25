@@ -1,0 +1,121 @@
+---
+import '../styles/global.css'
+---
+
+<body>
+  <section class='container'>
+    <div class='section_content'>
+      <h2 class='section_title'>key highlights</h2>
+      <div class='section_col'>
+        <div class='col'>
+          <h3 class='col_title'>Gameplay</h3>
+          <ul class='col_description'>
+            <!-- <li class="col_description_element"></li> -->
+            <li>Improved the cover system decreasing level loading time</li>
+            <li>Improved player movement system</li>
+            <li>
+              Implemented gamepads supportand vendor specific features for
+              Sony,Xbox, Steam, and Nintendo controllers.
+            </li>
+          </ul>
+        </div>
+        <div class='col'>
+          <h3 class='col_title'>Rendering & UI</h3>
+          <ul class='col_description'>
+            <!-- <li class="col_description_element"></li> -->
+            <li>Improved the cover system decreasing level loading time</li>
+            <li>Improved player movement system</li>
+            <li>
+              Implemented gamepads supportand vendor specific features for
+              Sony,Xbox, Steam, and Nintendo controllers.
+            </li>
+          </ul>
+        </div>
+        <div class='col'>
+          <h3 class='col_title'>Networking</h3>
+          <ul class='col_description'>
+            <!-- <li class="col_description_element"></li> -->
+            <li>Improved the cover system decreasing level loading time</li>
+            <li>Improved player movement system</li>
+            <li>
+              Implemented gamepads supportand vendor specific features for
+              Sony,Xbox, Steam, and Nintendo controllers.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+<style scoped>
+  body {
+    background: #181a1b;
+  }
+
+  .container {
+    font-family: var(--article-font-family);
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+    width: 1440px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 100px 110px;
+  }
+  .section_content {
+    display: flex;
+    flex-direction: row;
+    gap: 75px;
+  }
+  .section_title {
+    display: block;
+    color: white;
+    align-self: start;
+    font-size: 50px;
+    line-height: 60px;
+  }
+  .section_col {
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+  }
+  .col {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 260px;
+  }
+  .col_title {
+    font-size: 30px;
+    font-weight: 500;
+    color: #ffffff;
+  }
+  .col_description {
+    padding: 0;
+  }
+  .col_description li {
+    position: relative;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: normal;
+    font-weight: 400;
+    padding-left: 25px;
+
+    color: #ffffff;
+    list-style: none;
+  }
+  .col_description li::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    width: 4px;
+    height: 4px;
+    background: #ffffff;
+    border-radius: 50%;
+  }
+</style>
