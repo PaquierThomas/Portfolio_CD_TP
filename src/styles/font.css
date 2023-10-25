@@ -1,20 +1,32 @@
 @import url('https://p.typekit.net/p.css?s=1&k=fgw7kgu&ht=tk&f=14032.14033.14034.14035.21510.26893.26894.26897.26898.26909.26910.26913.26914.26915.29382.29383&a=2419445&app=typekit&e=css');
-/* Remora sans font face */
+/* Graphik sans font face */
 @font-face {
-  font-family: 'RemoraSans';
-  src: url('../../public/fonts/RemoraSans/RemoraSansW1-MediumItalic.otf')
-    format('otf');
-  font-weight: 400;
+  font-family: 'Graphik';
+  src: url('../../public/fonts/Graphik-Regular.otf') format('opentype');
+  font-weight: normal;
   font-style: normal;
-  font-display: auto;
+  font-display: swap;
 }
 @font-face {
-  font-family: 'RemoraSans';
-  src: url('../../public/fonts/RemoraSans/RemoraSansW1-MediumItalic.otf')
-    format('otf');
+  font-family: 'Graphik';
+  src: url('../../public/fonts/Graphik-Medium.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
-  font-display: auto;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Graphik';
+  src: url('../../public/fonts/Graphik-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Graphik';
+  src: url('../../public/fonts/Graphik-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* Aktiv grotesk font family */
