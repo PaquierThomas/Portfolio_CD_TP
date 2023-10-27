@@ -1,0 +1,116 @@
+---
+import '../styles/global.css'
+---
+
+<script>
+  //  When hover on h3 put the opacity of h3::after at 1 and when mouseleave put opacity at 0
+  const h3Elements = document.querySelectorAll('h3')
+
+  h3Elements.forEach((h3) => {
+    h3.addEventListener('mouseenter', () => {
+      h3.classList.add('show')
+    })
+
+    h3.addEventListener('mouseleave', () => {
+      h3.classList.remove('show')
+    })
+  })
+</script>
+
+<body>
+  <header>
+    <div class='wrapper-row'>
+      <div class='left-part'>
+        <h2>Takahisa Mitsumori</h2>
+        <hr />
+        <h3>3D Modeling</h3>
+        <h3>Webdesign</h3>
+        <h3>Drawings</h3>
+        <h3 class='active'>About</h3>
+      </div>
+      <div class='right-part'>
+        <h3>EN</h3>
+        <h3 class='active'>FR</h3>
+      </div>
+    </div>
+  </header>
+
+  <!-- <section class='container'>
+    <div class='section_content'>
+
+    </div>
+  </section> -->
+</body>
+
+<style scoped>
+  body {
+    background: black;
+  }
+  .wrapper-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    margin: 2rem;
+    padding: 130px 110px 0;
+
+    font-family: var(--article-font-family);
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.154;
+    letter-spacing: 0.007em;
+  }
+  .wrapper-row h3 {
+    position: relative;
+  }
+  .wrapper-row h3::after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-bottom-color: #fff;
+    border-bottom-width: #fff;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    border-bottom-style: solid;
+    opacity: 0;
+    transition: opacity 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  h3.active::after {
+    opacity: 1;
+  }
+  h3.show::after {
+    opacity: 1;
+  }
+
+  .left-part {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+  }
+  hr {
+    width: 4vw;
+    border: 1px solid white;
+  }
+
+  .right-part {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+
+  /* .container {
+    font-family: var(--article-font-family);
+
+    height: auto;
+    min-height: 715px;
+    color: white;
+    padding: 60px 110px;
+    margin: 0 auto;
+    width: 1440px;
+    max-width: 100%;
+  } */
+</style>

@@ -2,33 +2,55 @@
 /* Graphik sans font face */
 @font-face {
   font-family: 'Graphik';
-  src: url('../../public/fonts/Graphik-Regular.otf') format('opentype');
+  src: url('/fonts/Graphik-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Graphik';
-  src: url('../../public/fonts/Graphik-Medium.otf') format('opentype');
+  src: url('/fonts/Graphik-Medium.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Graphik';
-  src: url('../../public/fonts/Graphik-Semibold.otf') format('opentype');
+  src: url('/fonts/Graphik-Semibold.otf') format('opentype');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Graphik';
-  src: url('../../public/fonts/Graphik-Bold.otf') format('opentype');
+  src: url('/fonts/Graphik-Bold.otf') format('opentype');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 
+/* Deltra neue font family */
+@font-face {
+  font-family: 'Deltra Neue';
+  src: url('/fonts/DLTRDeltroNeue-Light.woff') format('WOFF 1.0');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Deltra Neue';
+  src: url('/fonts/DLTRDeltroNeue-Roman.woff') format('WOFF 1.0');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Deltra Neue';
+  src: url('/fonts/DLTRDeltroNeue-Medium.woff') format('WOFF 1.0');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 /* Aktiv grotesk font family */
 @font-face {
   font-family: 'aktiv-grotesk';
