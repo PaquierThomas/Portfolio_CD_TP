@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css'
+import '../../public/fleche.svg'
+import photo_tp from '../../public/photo_tp.jpg'
 ---
 
 <script>
@@ -29,17 +31,91 @@ import '../styles/global.css'
         <h3 class='active'>About</h3>
       </div>
       <div class='right-part'>
-        <h3>EN</h3>
-        <h3 class='active'>FR</h3>
+        <h3 class='active'>EN</h3>
+        <h3>FR</h3>
       </div>
     </div>
   </header>
 
-  <!-- <section class='container'>
+  <section class='container'>
     <div class='section_content'>
-
+      <div class='first-half'>
+        <div class='section_infos'>
+          <h4 class='section_title'>Bonjour!</h4>
+          <h4 class='section_subtitle'>
+            I'm Jameen. paris based <span class='section_subtitle_span1'
+              >Creative Director</span
+            >
+            & <span class='section_subtitle_span2'
+              >Motion Designer/3D Artist.</span
+            >
+          </h4>
+          <p>
+            I've worked as a Motion Designer, and Art Director at LA CHOSE and
+            AKQA, collaborating with clients such as Nike, Google and l'Oréal.
+          </p>
+          <p>
+            Then led a Motion and Design team as a Creative Director at
+            MAGNETISM.
+          </p>
+          <p>
+            I've always tried to give equal importance to story-telling and
+            composition, balancing the two. Tried to transform the cgi work as a
+            new way to express oneself.
+          </p>
+        </div>
+        <div class='section_socials'>
+          <div class='section_socials_elements'>
+            <a href='https://www.instagram.com/jameen_/' target='_blank'
+              >GET IN TOUCH</a
+            >
+            <img
+              src='../../public/fleche.svg'
+              alt='une fleche de redirection'
+            />
+          </div>
+          <div class='section_socials_elements'>
+            <a href='https://www.instagram.com/jameen_/' target='_blank'
+              >CALL ME</a
+            >
+            <img
+              src='../../public/fleche.svg'
+              alt='une fleche de redirection'
+            />
+          </div>
+          <div class='section_socials_elements'>
+            <a href='https://www.instagram.com/jameen_/' target='_blank'
+              >VIMEO</a
+            >
+            <img
+              src='../../public/fleche.svg'
+              alt='une fleche de redirection'
+            />
+          </div>
+          <div class='section_socials_elements'>
+            <a href='https://www.instagram.com/jameen_/' target='_blank'
+              >INSTAGRAM</a
+            >
+            <img
+              src='../../public/fleche.svg'
+              alt='une fleche de redirection'
+            />
+          </div>
+        </div>
+      </div>
+      <div class='second-half'>
+        <img src={photo_tp} alt='Image de thomas paquier' />
+      </div>
     </div>
-  </section> -->
+  </section>
+  <footer>
+    <div class='wrapper-row'>
+      <div class='left-part'>
+        <h2>@Thomas Paquier</h2>
+      </div>
+      <div class='right-part'></div>
+    </div>
+  </footer>
 </body>
 
 <style scoped>
@@ -113,4 +189,68 @@ import '../styles/global.css'
     width: 1440px;
     max-width: 100%;
   } */
+  .section_content {
+    font-family: var(--article-font-family);
+
+    color: white;
+    padding: 130px 250px 0;
+    /* width: 100%; */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .first-half {
+    width: 34vw;
+  }
+  .section_infos {
+    display: flex;
+    flex-direction: column;
+    gap: 50px; /* A modifier en changeant la taille de police  */
+  }
+  .section_title {
+    padding-bottom: 30px;
+  }
+  .section_subtitle {
+    /* padding-right: 30vw; */
+    margin-bottom: 20px;
+  }
+  .section_infos h4 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    letter-spacing: 0.025rem;
+  }
+  .section_socials {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 50px;
+  }
+  .section_socials_elements {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+  .section_socials_elements a {
+    min-width: 120px;
+    color: white;
+    text-decoration: none;
+  }
+
+  .second-half {
+    width: 30vw;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .second-half img {
+    padding-right: 131px;
+    height: auto;
+    width: 70%;
+  }
 </style>
