@@ -1,0 +1,15 @@
+---
+import type { Project } from '../content/config'
+
+type Props = Project & {}
+
+const props = Astro.props
+---
+
+<div>
+  <h1>{props.title}</h1>
+  <img src={props.image} alt='une image' />
+  <slot />
+</div>
+
+<style></style>
