@@ -45,6 +45,7 @@
   src: url('/fonts/DLTRDeltroNeue-Medium.woff') format('woff');
   font-weight: 700;
 }
+
 /* Aktiv grotesk font family */
 @font-face {
   font-family: 'aktiv-grotesk';

@@ -25,8 +25,6 @@ import purpleVideo from '/video/purple_anim.mp4'
         <img
           src={myFleche}
           alt='une flèche qui pointe vers une autre page'
-          height='50px'
-          width='50px'
           class='col_icon'
         />
         <h2 class='col_titre'>Galleries</h2>
@@ -76,6 +74,8 @@ import purpleVideo from '/video/purple_anim.mp4'
   const items = document.querySelectorAll('.grid > div')
 
   items.forEach((item, index) => {
+    const video = item.querySelector('video')
+
     item.addEventListener('mouseenter', () => {
       const values = Array(items.length).fill('1fr')
       if (index > 0) {
@@ -87,20 +87,14 @@ import purpleVideo from '/video/purple_anim.mp4'
         values[index + 1] = '0.8fr'
       }
       grid.style.gridTemplateColumns = values.join(' ')
+
+      video?.play()
     })
+
     item.addEventListener('mouseleave', () => {
       grid.style.gridTemplateColumns = Array(items.length).fill('1fr').join(' ')
-    })
-  })
 
-  //  Play video on hover
-  const videos = document.querySelectorAll('video')
-  videos.forEach((video) => {
-    video.addEventListener('mouseenter', () => {
-      video.play()
-    })
-    video.addEventListener('mouseleave', () => {
-      video.pause()
+      video?.pause()
     })
   })
 </script>

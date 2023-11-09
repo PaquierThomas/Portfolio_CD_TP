@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css'
-import '../../public/fleche.svg'
+import MyFleche from '../../public/fleche.svg'
 import photo_tp from '../../public/photo_tp.jpg'
 ---
 
@@ -69,37 +69,25 @@ import photo_tp from '../../public/photo_tp.jpg'
             <a href='https://www.instagram.com/jameen_/' target='_blank'
               >GET IN TOUCH</a
             >
-            <img
-              src='../../public/fleche.svg'
-              alt='une fleche de redirection'
-            />
+            <img src={MyFleche} alt='une fleche de redirection' />
           </div>
           <div class='section_socials_elements'>
             <a href='https://www.instagram.com/jameen_/' target='_blank'
               >CALL ME</a
             >
-            <img
-              src='../../public/fleche.svg'
-              alt='une fleche de redirection'
-            />
+            <img src={MyFleche} alt='une fleche de redirection' />
           </div>
           <div class='section_socials_elements'>
             <a href='https://www.instagram.com/jameen_/' target='_blank'
               >VIMEO</a
             >
-            <img
-              src='../../public/fleche.svg'
-              alt='une fleche de redirection'
-            />
+            <img src={MyFleche} alt='une fleche de redirection' />
           </div>
           <div class='section_socials_elements'>
             <a href='https://www.instagram.com/jameen_/' target='_blank'
               >INSTAGRAM</a
             >
-            <img
-              src='../../public/fleche.svg'
-              alt='une fleche de redirection'
-            />
+            <img src={MyFleche} alt='une fleche de redirection' />
           </div>
         </div>
       </div>
@@ -122,6 +110,7 @@ import photo_tp from '../../public/photo_tp.jpg'
   body {
     background: black;
   }
+
   .wrapper-row {
     display: flex;
     flex-direction: row;
@@ -132,7 +121,7 @@ import photo_tp from '../../public/photo_tp.jpg'
     padding: 130px 110px 0;
 
     font-family: var(--article-second-font-family);
-    font-weight: 800;
+    font-weight: 400;
     font-size: 26px;
     line-height: 1.154;
     letter-spacing: 0.007em;
@@ -229,14 +218,18 @@ import photo_tp from '../../public/photo_tp.jpg'
 
     margin-top: 50px;
   }
+  .section_socials img {
+    height: 3rem;
+    width: 3rem;
+  }
   .section_socials_elements {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 20px;
+    gap: 5px;
   }
   .section_socials_elements a {
-    min-width: 120px;
+    /* min-width: 40px; */
     color: white;
     text-decoration: none;
   }

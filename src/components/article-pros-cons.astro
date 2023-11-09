@@ -1,0 +1,82 @@
+---
+import '../styles/global.css'
+import myPlus from '/plus_icon.png'
+import myCheck from '/check_icon.png'
+
+type Props = {
+  title: string
+  image: string
+}
+
+const { title, image } = Astro.props
+---
+
+<div class='section_row'>
+  <div class='section_row_title'>
+    <h3>{title}</h3>
+    <img src={image} alt="icone d'un plus" />
+  </div>
+  <slot />
+</div>
+
+<style scoped>
+  body {
+    background: #181a1b;
+  }
+
+  .container {
+    font-family: var(--article-font-family);
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    color: #e8e6e3;
+
+    width: 1440px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 100px 110px;
+  }
+  .section_content {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+  .section_row {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+  }
+  .section_row_title {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    min-width: 275px;
+
+    font-size: 43px;
+    font-weight: bold;
+    line-height: 60px;
+    letter-spacing: normal;
+  }
+  .section_row_title img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .section_row_list {
+    font-size: 30px;
+    line-height: 40px;
+    padding-top: 10px;
+  }
+  .section_row_description {
+    padding-left: 10px;
+    padding-top: 5px;
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  hr.solid {
+    border-top: 1px #383d40;
+  }
+</style>
