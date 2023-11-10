@@ -4,12 +4,75 @@ import type { Project } from '../content/config'
 type Props = Project & {}
 
 const props = Astro.props
+import '../styles/global.css'
 ---
 
-<div>
-  <h1>{props.title}</h1>
-  <img src={props.image} alt='une image' />
+<main class='main'>
+  <section class='article'>
+    <div class='wrapper-titre'>
+      <div class='titles'>
+        <h2 class='first'>{props.title} <br /> {props.title2}</h2>
+      </div>
+    </div>
+  </section>
   <slot />
-</div>
+</main>
 
-<style></style>
+<style define:vars={{ projectImage: `url(${props.image})` }}>
+  .article {
+    background-color: red;
+    background-image: var(--projectImage);
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    height: 97vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .article::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .wrapper-titre {
+    font-family: aktiv-grotesk, sans-serif;
+    position: relative;
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .titles {
+    height: 100%;
+    width: 35%;
+    left: 13%;
+    text-transform: uppercase;
+  }
+
+  .titles h2 {
+    font-family: aktiv-grotesk-extended, sans-serif;
+    font-weight: 800;
+    font-size: 5vw;
+    color: rgb(232, 230, 227);
+    font-style: normal;
+    letter-spacing: 0;
+    position: absolute;
+    line-height: 110%;
+    top: 52%;
+    left: 15%;
+    transform: translateY(-50%);
+    z-index: 5;
+  }
+</style>

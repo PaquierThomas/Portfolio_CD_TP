@@ -1,6 +1,7 @@
 ---
-title: test pouf
-image: '\photo_tp.jpg'
+title: Kazuki
+title2: Portfolio
+image: '/test.jpg'
 ---
 
 # Mon titre
