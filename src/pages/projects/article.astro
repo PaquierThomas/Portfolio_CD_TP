@@ -71,30 +71,35 @@ transform-style: preserve-3d;'
       </p>
     </div>
   </section>
-  <ArticleProsCons title='Results' image={myPlus}>
-    <ul class='section_row_list'>
-      <li>Adapted Life Is Strange 2 for Nintendo Switch and Stadia</li>
-      <li>Ensured stable framerate</li>
-      <li>
-        Upgraded the project to Unreal Engine 4.26 to allow Stadia support
-      </li>
-      <li>
-        Accelerated time to market by effectively managing project risks and
-        organizing a proper work process
-      </li>
-    </ul>
-  </ArticleProsCons>
-  <ArticleProsCons title='Results' image={myCheck}>
-    <div>
-      <p class='section_row_list'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-        impedit, hic ut dolor obcaecati autem veritatis, excepturi sequi fugiat
-        totam voluptate explicabo. Odit architecto aliquid excepturi recusandae
-        accusamus harum hic!
-      </p>
-    </div>
-  </ArticleProsCons>
 
+  <section class='container'>
+    <div class='section_content'>
+      <ArticleProsCons title='Results' image={myPlus}>
+        <ul class='section_row_list'>
+          <li>Adapted Life Is Strange 2 for Nintendo Switch and Stadia</li>
+          <li>Ensured stable framerate</li>
+          <li>
+            Upgraded the project to Unreal Engine 4.26 to allow Stadia support
+          </li>
+          <li>
+            Accelerated time to market by effectively managing project risks and
+            organizing a proper work process
+          </li>
+        </ul>
+      </ArticleProsCons>
+      <hr class='solid' />
+      <ArticleProsCons title='Solution' image={myCheck}>
+        <div>
+          <p class='section_row_list'>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
+            impedit, hic ut dolor obcaecati autem veritatis, excepturi sequi
+            fugiat totam voluptate explicabo. Odit architecto aliquid excepturi
+            recusandae accusamus harum hic!
+          </p>
+        </div>
+      </ArticleProsCons>
+    </div>
+  </section>
   <!-- <section class='next-article'>
     <div class='previous-project'>
       <h2 class='titre-next-project'>titre1</h2>
@@ -122,6 +127,26 @@ transform-style: preserve-3d;'
     background-color: white;
   }
 
+  .container {
+    font-family: var(--article-font-family);
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    /* color: #e8e6e3;  pour le dark mode */
+    color: black;
+
+    width: 1220px;
+    /* width: 1440px; for big screens */
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 100px 110px;
+  }
+  .section_content {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
   /* .wrapper-intro {
     width: 100%;
     display: flex;
@@ -220,8 +245,8 @@ transform-style: preserve-3d;'
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
-    height: 97vh;
-    width: 100vw;
+    height: 99vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -469,5 +494,9 @@ transform-style: preserve-3d;'
     width: 100%;
     max-width: 100%;
     margin-bottom: 40px;
+  }
+  .solid {
+    border-top: 1px #383d40;
+    width: 100%;
   }
 </style>

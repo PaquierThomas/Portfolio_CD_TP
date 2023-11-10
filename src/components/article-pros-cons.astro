@@ -16,7 +16,9 @@ const { title, image } = Astro.props
     <h3>{title}</h3>
     <img src={image} alt="icone d'un plus" />
   </div>
-  <slot />
+  <div class='section_row_description'>
+    <slot />
+  </div>
 </div>
 
 <style scoped>
@@ -24,24 +26,6 @@ const { title, image } = Astro.props
     background: #181a1b;
   }
 
-  .container {
-    font-family: var(--article-font-family);
-
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    color: #e8e6e3;
-
-    width: 1440px;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 100px 110px;
-  }
-  .section_content {
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-  }
   .section_row {
     display: flex;
     flex-direction: row;
@@ -54,7 +38,7 @@ const { title, image } = Astro.props
 
     min-width: 275px;
 
-    font-size: 43px;
+    font-size: 50px;
     font-weight: bold;
     line-height: 60px;
     letter-spacing: normal;
@@ -68,6 +52,7 @@ const { title, image } = Astro.props
     font-size: 30px;
     line-height: 40px;
     padding-top: 10px;
+    list-style: inside;
   }
   .section_row_description {
     padding-left: 10px;
