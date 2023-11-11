@@ -12,6 +12,16 @@ export const projectSchema = z.object({
   }),
   subject: z.string(),
   summary: z.string(),
+  textblock: z
+    .object({
+      title: z.object({
+        highlightTitle: z.string(),
+        secondPartTitle: z.string(),
+      }),
+      summary: z.string(),
+      text: z.array(z.string()),
+    })
+    .optional(),
 })
 
 export const collections = {

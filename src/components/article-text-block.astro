@@ -1,0 +1,57 @@
+---
+import '../styles/global.css'
+import myPlus from '/plus_icon.png'
+import myCheck from '/check_icon.png'
+import { mergeProps } from 'vue'
+
+type Props = {
+  highlightTitle: string
+  secondPartTitle: string
+  summary: string
+}
+
+const { highlightTitle, secondPartTitle, summary, text } = Astro.props
+---
+
+<div class='section_content'>
+  <h2 class='section_title'><span>{highlightTitle}</span> {secondPartTitle}</h2>
+  <p class='section_summary'>
+    {summary}
+  </p>
+  <div class='section_description'>
+    <!-- {text.map((text: string) => <p>{text}</p>)} -->
+    <slot />
+  </div>
+</div>
+
+<style scoped>
+  .section_title {
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 60px;
+  }
+  .section_title span {
+    color: #44e9ff;
+  }
+
+  .section_content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .section_summary {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 40px;
+  }
+  .section_description {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 60px;
+    grid-row-gap: 30px;
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+  }
+</style>

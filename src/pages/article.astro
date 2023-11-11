@@ -3,20 +3,21 @@ import testImage from '../assets/image/3.png'
 
 import '../../styles/global.css'
 import ArticleProsCons from '../../components/article-pros-cons.astro'
+import ArticleTextBlock from '../components/article-text-block.astro'
 import myPlus from '/plus_icon.png'
 import myCheck from '/check_icon.png'
 ---
 
-<main class='main'>
-  <section class='article'>
-    <div class='wrapper-titre'>
-      <div class='titles'>
-        <h2 class='first'>KAZUKI <br /> PORTFOLIO</h2>
-      </div>
+< class='main'>
+<section class='article'>
+  <div class='wrapper-titre'>
+    <div class='titles'>
+      <h2 class='first'>KAZUKI <br /> PORTFOLIO</h2>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- <section class='intro'>
+<!-- <section class='intro'>
     <div class='wrapper-intro'>
       <div class='info-col'>
         <div class='wrapper-line'>
@@ -44,92 +45,88 @@ import myCheck from '/check_icon.png'
       </div>
     </div>
   </section> -->
-  <section class='about-project'>
-    <div class='text-left'>
-      <p class='paragraph-left'>Client<br /></p>
-      <p class='paragraph-left normal'>
-        GOPOS Sp.z O.O.<br />
-      </p>
-      <p class='paragraph-left normal'><br /></p>
-      <p class='paragraph-left'>
-        year<br />
-      </p>
-      <p class='paragraph-left normal'>2020-2021<br /></p>
-      <p class='paragraph-left'>
-        <br />
-      </p>
-      <p class='paragraph-left'>role<br /></p>
-      <p class='paragraph-left normal'>
-        Brand design <br /> ux design & Concept <br />ui design <br />
-      </p>
-    </div>
-    <div class='text-right'>
-      <div class='h3-title'>POS design & website concept</div><p
-        class='h2-subheading cd small'
-      >
-        GoPOS is a company offering POS software along with equipment for
-        gastronomy, service outlets and amusement parks. My role was to design
-        brand identity, logo , visuals and all UI/UX for landingpage and POS.
-      </p>
-    </div>
-  </section>
+<section class='about-project'>
+  <div class='text-left'>
+    <p class='paragraph-left'>Client<br /></p>
+    <p class='paragraph-left normal'>
+      GOPOS Sp.z O.O.<br />
+    </p>
+    <p class='paragraph-left normal'><br /></p>
+    <p class='paragraph-left'>
+      year<br />
+    </p>
+    <p class='paragraph-left normal'>2020-2021<br /></p>
+    <p class='paragraph-left'>
+      <br />
+    </p>
+    <p class='paragraph-left'>role<br /></p>
+    <p class='paragraph-left normal'>
+      Brand design <br /> ux design & Concept <br />ui design <br />
+    </p>
+  </div>
+  <div class='text-right'>
+    <div class='h3-title'>POS design & website concept</div><p
+      class='h2-subheading cd small'
+    >
+      GoPOS is a company offering POS software along with equipment for
+      gastronomy, service outlets and amusement parks. My role was to design
+      brand identity, logo , visuals and all UI/UX for landingpage and POS.
+    </p>
+  </div>
+</section>
 
-  <!-- Image/Logo slider -->
-  <div class='logo-full'>
-    <div class='bg-image-gp'>
-      <div
-        class='bg-border'
-        style='will-change: transform;
+<!-- Image/Logo slider -->
+<div class='logo-full'>
+  <div class='bg-image-gp'>
+    <div
+      class='bg-border'
+      style='will-change: transform;
 transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg);
 transform-style: preserve-3d;'
-      >
-      </div>
+    >
     </div>
   </div>
+</div>
 
-  <section class='content-project'>
-    <div class='text-right'>
-      <div class='h3-title'>CI Design</div>
-      <p class='h2-subheading cd small'>
-        I prepared visual identification for the project. I have chosen blue as
-        the main color scheme and the font for the project is modern DM Sans.
-        Elements of rounded corners and additional circles and dots add
-        lightness and character to the website and posts on instagram /
-        facebook.
-      </p>
-    </div>
-  </section>
-  <ArticleProsCons title='Results' image={myPlus}>
-    <ul class='section_row_list'>
-      <li>Adapted Life Is Strange 2 for Nintendo Switch and Stadia</li>
-      <li>Ensured stable framerate</li>
-      <li>
-        Upgraded the project to Unreal Engine 4.26 to allow Stadia support
-      </li>
-      <li>
-        Accelerated time to market by effectively managing project risks and
-        organizing a proper work process
-      </li>
-    </ul>
-  </ArticleProsCons>
-  <ArticleProsCons title='Results' image={myCheck}>
-    <div>
-      <p class='section_row_list'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-        impedit, hic ut dolor obcaecati autem veritatis, excepturi sequi fugiat
-        totam voluptate explicabo. Odit architecto aliquid excepturi recusandae
-        accusamus harum hic!
-      </p>
-    </div>
-  </ArticleProsCons>
+<section class='content-project'>
+  <div class='text-right'>
+    <div class='h3-title'>CI Design</div>
+    <p class='h2-subheading cd small'>
+      I prepared visual identification for the project. I have chosen blue as
+      the main color scheme and the font for the project is modern DM Sans.
+      Elements of rounded corners and additional circles and dots add lightness
+      and character to the website and posts on instagram / facebook.
+    </p>
+  </div>
+</section>
+<ArticleProsCons title='Results' image={myPlus}>
+  <ul class='section_row_list'>
+    <li>Adapted Life Is Strange 2 for Nintendo Switch and Stadia</li>
+    <li>Ensured stable framerate</li>
+    <li>Upgraded the project to Unreal Engine 4.26 to allow Stadia support</li>
+    <li>
+      Accelerated time to market by effectively managing project risks and
+      organizing a proper work process
+    </li>
+  </ul>
+</ArticleProsCons>
+<ArticleProsCons title='Results' image={myCheck}>
+  <div>
+    <p class='section_row_list'>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt impedit,
+      hic ut dolor obcaecati autem veritatis, excepturi sequi fugiat totam
+      voluptate explicabo. Odit architecto aliquid excepturi recusandae
+      accusamus harum hic!
+    </p>
+  </div>
+</ArticleProsCons>
 
-  <!-- <section class='next-article'>
+<!-- <section class='next-article'>
     <div class='previous-project'>
       <h2 class='titre-next-project'>titre1</h2>
     </div>
     <div class='next-project'><h2 class='titre-next-project'>titre2</h2></div>
   </section> -->
-</main>
 
 <script>
   const bgBorder = document.querySelector('.bg-border') as HTMLElement
