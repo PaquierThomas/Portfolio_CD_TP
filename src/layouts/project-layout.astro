@@ -1,5 +1,6 @@
 ---
 import type { Project } from '../content/config'
+import ArticleTextBlock from '../components/article-text-block.astro'
 
 type Props = Project & {}
 
@@ -44,10 +45,36 @@ import '../styles/global.css'
       </p>
     </div>
   </section>
+  <section class='container'>
+    <div class='section_content'>
+      {props.textblock && <ArticleTextBlock {...props.textblock} />}
+    </div>
+  </section>
+
   <slot />
 </main>
 
 <style define:vars={{ projectImage: `url(${props.image})` }}>
+  .container {
+    font-family: var(--article-font-family);
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    /* color: #e8e6e3;  pour le dark mode */
+    color: black;
+
+    width: 1220px;
+    /* width: 1440px; for big screens */
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 100px 110px;
+  }
+  .section_content {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
   .article {
     background-color: red;
     background-image: var(--projectImage);

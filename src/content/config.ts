@@ -12,6 +12,7 @@ export const projectSchema = z.object({
   }),
   subject: z.string(),
   summary: z.string(),
+
   textblock: z
     .object({
       title: z.object({
@@ -19,7 +20,7 @@ export const projectSchema = z.object({
         secondPartTitle: z.string(),
       }),
       summary: z.string(),
-      text: z.array(z.string()),
+      paragraph: z.array(z.string()),
     })
     .optional(),
 })
