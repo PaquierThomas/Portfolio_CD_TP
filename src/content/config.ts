@@ -3,6 +3,7 @@ import { defineCollection, z } from 'astro:content'
 export const projectSchema = z.object({
   title: z.string(),
   title2: z.string(),
+  date_parution: z.date(),
   image: z.string(),
   client: z.string(),
   roles: z.array(z.string()),
@@ -12,6 +13,17 @@ export const projectSchema = z.object({
   }),
   subject: z.string(),
   summary: z.string(),
+
+  procons: z
+    .array(
+      z.object({
+        title: z.string(),
+        image: z.string(),
+        list: z.array(z.string()).optional(),
+        paragraph: z.string().optional(),
+      }),
+    )
+    .optional(),
 
   textblock: z
     .object({

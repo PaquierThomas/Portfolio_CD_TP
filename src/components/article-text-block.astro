@@ -19,7 +19,7 @@ const { title, summary, paragraph } = Astro.props
     {summary}
   </p>
   <div class='section_description'>
-    {paragraph.map((text: string) => <p>{text}</p>)}
+    {paragraph?.map((text: string) => <p>{text}</p>)}
   </div>
 </div>
 

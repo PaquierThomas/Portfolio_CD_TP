@@ -2,7 +2,7 @@
 title: Kazuki
 title2: Portfolio
 image: '\photo_tp.jpg'
-
+date_parution: 2023-10-05
 client: GOPOS
 roles:
   - Role 1

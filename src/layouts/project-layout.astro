@@ -1,6 +1,7 @@
 ---
 import type { Project } from '../content/config'
 import ArticleTextBlock from '../components/article-text-block.astro'
+import ArticleProsCons from '../components/article-pros-cons.astro'
 
 type Props = Project & {}
 
@@ -34,7 +35,7 @@ import '../styles/global.css'
       </p>
       <p class='paragraph-left'>role<br /></p>
       <ul class='paragraph-left normal'>
-        {props.roles.map((role: string) => <li>{role}</li>)}
+        {props.roles?.map((role: string) => <li>{role}</li>)}
       </ul>
     </div>
     <div class='text-right'>
@@ -48,6 +49,7 @@ import '../styles/global.css'
   <section class='container'>
     <div class='section_content'>
       {props.textblock && <ArticleTextBlock {...props.textblock} />}
+      {props.procons && <ArticleProsCons procons={props.procons} />}
     </div>
   </section>
 

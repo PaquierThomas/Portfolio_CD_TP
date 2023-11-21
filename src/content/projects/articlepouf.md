@@ -1,8 +1,9 @@
 ---
-title: Kazuki
-title2: Portfolio
+title: THE MEDIA
+title2: GARDEN
 image: '/test.jpg'
 client: GOPOS
+date_parution: 2023-11-01
 roles:
   - Role 1
   - Role 2
@@ -11,7 +12,6 @@ roles:
 annee: { debut: 134, fin: 1234 }
 subject: 'POS design & website concept'
 summary: 'GoPOS is a company offering POS software along with equipment for gastronomy, service outlets and amusement parks. My role was to design brand identity, logo , visuals and all UI/UX for landingpage and POS. '
-
 textblock:
   title:
     highlightTitle: Accelarated speed,
@@ -23,8 +23,17 @@ textblock:
   paragraph:
     - 'We properly organized our Gitlab repository so developers could commit code to a test branch first and push it to the main branch only after it successfully passes the review. We also created a wiki to share information with our team and make new people quickly jump into the project. We worked efficiently during development as well. For example, Dontnod implemented a custom engine to achieve cinema-quality 3D animation. Given that the conventional way of porting this functionality to a new platform would not allow us to achieve the desired acceleration in delivery, we optimized our pipeline to decrease the amount of work needed to move the animation to the new platforms.'
     - 'We properly organized our Gitlab repository so developers could commit code to a test branch first and push it to the main branch only after it successfully passes the review. We also created a wiki to share information with our team and make new people quickly jump into the project. We worked efficiently during development as well. For example, Dontnod implemented a custom engine to achieve cinema-quality 3D animation. Given that the conventional way of porting this functionality to a new platform would not allow us to achieve the desired acceleration in delivery, we optimized our pipeline to decrease the amount of work needed to move the animation to the new platforms.'
-    - 'We properly organized our Gitlab repository so developers could commit code to a test branch first and push it to the main branch only after it successfully passes the review. We also created a wiki to share information with our team and make new people quickly jump into the project. We worked efficiently during development as well. For example, Dontnod implemented a custom engine to achieve cinema-quality 3D animation. Given that the conventional way of porting this functionality to a new platform would not allow us to achieve the desired acceleration in delivery, we optimized our pipeline to decrease the amount of work needed to move the animation to the new platforms.'
-    - 'We properly organized our Gitlab repository so developers could commit code to a test branch first and push it to the main branch only after it successfully passes the review. We also created a wiki to share information with our team and make new people quickly jump into the project. We worked efficiently during development as well. For example, Dontnod implemented a custom engine to achieve cinema-quality 3D animation. Given that the conventional way of porting this functionality to a new platform would not allow us to achieve the desired acceleration in delivery, we optimized our pipeline to decrease the amount of work needed to move the animation to the new platforms.'
-    - 'We properly organized our Gitlab repository so developers could commit code to a test branch first and push it to the main branch only after it successfully passes the review. We also created a wiki to share information with our team and make new people quickly jump into the project. We worked efficiently during development as well. For example, Dontnod implemented a custom engine to achieve cinema-quality 3D animation. Given that the conventional way of porting this functionality to a new platform would not allow us to achieve the desired acceleration in delivery, we optimized our pipeline to decrease the amount of work needed to move the animation to the new platforms.'
-    - 'We properly organized our Gitlab repository so developers could commit code to a test branch first and push it to the main branch only after it successfully passes the review. We also created a wiki to share information with our team and make new people quickly jump into the project. We worked efficiently during development as well. For example, Dontnod implemented a custom engine to achieve cinema-quality 3D animation. Given that the conventional way of porting this functionality to a new platform would not allow us to achieve the desired acceleration in delivery, we optimized our pipeline to decrease the amount of work needed to move the animation to the new platforms.'
+
+procons:
+  - title: Results
+    image: /plus_icon.png
+    list:
+      - Adapted Life Is Strange 2 for Nintendo Switch and Stadia
+      - Ensured stable framerate
+      - Upgraded the project to Unreal Engine 4.26 to allow Stadia support
+      - Accelerated time to market by effectively managing project risks and organizing a proper work process
+
+  - title: Solutions
+    image: /check_icon.png
+    paragraph: 'We properly organized our Gitlab repository so developers could commit code to a test branch first and push it to the main branch only after it successfully passes the review. We also created a wiki to share information with our team and make new people quickly jump into the project. We worked efficiently during development as well. For example, Dontnod implemented a custom engine to achieve cinema-quality 3D animation. Given that the conventional way of porting this functionality to a new platform would not allow us to achieve the desired acceleration in delivery, we optimized our pipeline to decrease the amount of work needed to move the animation to the new platforms.'
 ---

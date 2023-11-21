@@ -2,29 +2,40 @@
 import '../styles/global.css'
 import myPlus from '/plus_icon.png'
 import myCheck from '/check_icon.png'
+import type { Project } from '../content/config'
 
 type Props = {
-  title: string
-  image: string
+  procons: Project['procons']
 }
 
-const { title, image } = Astro.props
+const props = Astro.props
 ---
 
-<div class='section_row'>
-  <div class='section_row_title'>
-    <h3>{title}</h3>
-    <img src={image} alt="icone d'un plus" />
-  </div>
-  <div class='section_row_description'>
-    <slot />
-  </div>
+<div>
+  <!-- Styliser le container  -->
+  {
+    props.procons.map((procon: any) => (
+      <div class='section_row'>
+        <div class='section_row_title'>
+          <h3>{procon.title}</h3>
+          <img src={procon.image} alt="icone d'un plus" />
+        </div>
+        <div class='section_row_description'>
+          {procon.list?.map((text: string) => (
+            <li>{text}</li>
+          ))}
+          {procon.paragraph}
+          <slot />
+        </div>
+      </div>
+    ))
+  }
 </div>
 
 <style scoped>
-  body {
+  /* body {
     background: #181a1b;
-  }
+  } */
 
   .section_row {
     display: flex;
