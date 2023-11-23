@@ -10,10 +10,10 @@ import purpleVideo from '/video/purple_anim.mp4'
 <body>
   <div class='container'>
     <div class='intro'>
-      <h2 class='intro_icon'>art.gal</h2>
+      <h2 class='intro_icon'>Thomas.Paquier</h2>
 
       <div class='intro_hero'>
-        <h2 class='intro_titre'>FOLLOW THE ART</h2>
+        <h2 class='intro_titre'><span>ONE PERSON</span> 3 UNIVERSES</h2>
         <p class='intro_description'>
           No doubt the artist is the child of his time; but woe to him if he is
           also its disciple, or even its favorite.
@@ -27,7 +27,7 @@ import purpleVideo from '/video/purple_anim.mp4'
           alt='une flèche qui pointe vers une autre page'
           class='col_icon'
         />
-        <h2 class='col_titre'>Galleries</h2>
+        <h2 class='col_titre'>MODELISATION</h2>
         <video loop muted>
           <source src={blueVideo} type='video/mp4' />
         </video>
@@ -75,6 +75,7 @@ import purpleVideo from '/video/purple_anim.mp4'
 
   items.forEach((item, index) => {
     const video = item.querySelector('video')
+    const myFleche = item.querySelector('img') // Sélection de myFleche
 
     item.addEventListener('mouseenter', () => {
       const values = Array(items.length).fill('1fr')
@@ -89,12 +90,19 @@ import purpleVideo from '/video/purple_anim.mp4'
       grid.style.gridTemplateColumns = values.join(' ')
 
       video?.play()
+
+      // Lors du hover, l'opacité de myFleche passe à 1
+      myFleche.style.opacity = '1'
+      myFleche.style.transform = 'translate(10%, -10%)'
     })
 
     item.addEventListener('mouseleave', () => {
       grid.style.gridTemplateColumns = Array(items.length).fill('1fr').join(' ')
 
       video?.pause()
+
+      myFleche.style.opacity = '0'
+      myFleche.style.transform = 'translate(-10%, 10%)'
     })
   })
 </script>
@@ -120,8 +128,9 @@ import purpleVideo from '/video/purple_anim.mp4'
   .intro_icon {
     position: absolute;
     font-weight: 900;
-    top: 5px;
+    top: 12px;
     left: 17px;
+    font-family: var(--primary-font-family);
   }
 
   .intro_hero {
@@ -136,7 +145,7 @@ import purpleVideo from '/video/purple_anim.mp4'
     font-size: var(--giant-font-size);
     font-family: var(--primary-font-family);
     line-height: 1;
-    padding-right: 45%;
+    padding-right: 25%;
     font-weight: 800;
   }
   .intro_description {
@@ -158,10 +167,13 @@ import purpleVideo from '/video/purple_anim.mp4'
     position: absolute;
     display: flex;
     justify-content: center;
-    top: 40px;
-    width: 75px;
-    height: 75px;
+    top: 60px;
+    scale: 1.15;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.5s ease; /* Animation de transition */
+    transform: translate(-35%, 30%); /* Décalage initial */
   }
+
   .col_titre {
     display: flex;
     position: absolute;
@@ -169,6 +181,8 @@ import purpleVideo from '/video/purple_anim.mp4'
     font-size: var(--big-font-size);
     font-family: var(--primary-font-family);
     transform: rotate(-90deg);
+    font-weight: 700;
+    /* text-transform: uppercase; */
     color: white;
     /* transform: rotate(-90deg); */
   }
@@ -192,7 +206,10 @@ import purpleVideo from '/video/purple_anim.mp4'
   .col_blue h2 {
     z-index: 1;
   }
-  .col_blue img {
+  .col_blue img,
+  .col_purple img,
+  .col_red img,
+  .col_yellow img {
     color: white;
     stroke: white;
     width: 100px;
