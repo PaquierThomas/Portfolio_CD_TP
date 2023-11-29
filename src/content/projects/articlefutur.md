@@ -1,9 +1,10 @@
 ---
-title: Kazuki
-title2: Portfolio
+title: TAMAKI HOME
+title2: CORPORATE SITE
 image: '\photo_tp.jpg'
-date_parution: 2023-10-05
+date_parution: 2023-11-29
 client: GOPOS
+slug: 'article-futur'
 roles:
   - Role 1
   - Role 2

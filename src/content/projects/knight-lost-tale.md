@@ -1,8 +1,9 @@
 ---
 title: THE MEDIA
 title2: GARDEN
-image: '/test.jpg'
+image: '/MuseAic.png'
 client: GOPOS
+slug: 'knight-lost-tale'
 date_parution: 2023-11-01
 roles:
   - Role 1
