@@ -13,11 +13,35 @@ import purpleVideo from '/video/purple_anim.mp4'
       <h2 class='intro_icon'>Thomas.Paquier</h2>
 
       <div class='intro_hero'>
-        <h2 class='intro_titre'><span>ONE PERSON</span> 3 UNIVERSES</h2>
+        <h2 class='intro_titre'>ONE PERSON, THREE CREATIVE SPHERES</h2>
         <p class='intro_description'>
-          No doubt the artist is the child of his time; but woe to him if he is
-          also its disciple, or even its favorite.
+          Welcome to my creative space. Explore my varied works, each a
+          testament to unique passion and vision. Open to exciting
+          collaborations to push the boundaries of my craft. I hope this
+          collection ignites inspiration within you, reflecting the evolution of
+          my creative path.
         </p>
+
+        <div class='button button-anim'>
+          <p class='button-text'>Discover my work</p>
+          <svg
+            width='36px'
+            height='36px'
+            clip-rule='evenodd'
+            fill-rule='evenodd'
+            stroke-linejoin='round'
+            stroke-miterlimit='2'
+            viewBox='0 0 24 24'
+            xmlns='http://www.w3.org/2000/svg'
+            ><path
+              d='m14.523 18.787s4.501-4.505 6.255-6.26c.146-.146.219-.338.219-.53s-.073-.383-.219-.53c-1.753-1.754-6.255-6.258-6.255-6.258-.144-.145-.334-.217-.524-.217-.193 0-.385.074-.532.221-.293.292-.295.766-.004 1.056l4.978 4.978h-14.692c-.414 0-.75.336-.75.75s.336.75.75.75h14.692l-4.979 4.979c-.289.289-.286.762.006 1.054.148.148.341.222.533.222.19 0 .378-.072.522-.215z'
+              fill-rule='nonzero'></path></svg
+          >
+        </div>
+      </div>
+      <div class='intro_langue'>
+        <h3 class='active'>EN</h3>
+        <h3>FR</h3>
       </div>
     </div>
     <div class='grid'>
@@ -91,7 +115,6 @@ import purpleVideo from '/video/purple_anim.mp4'
 
       video?.play()
 
-      // Lors du hover, l'opacité de myFleche passe à 1
       myFleche.style.opacity = '1'
       myFleche.style.transform = 'translate(10%, -10%)'
     })
@@ -103,6 +126,18 @@ import purpleVideo from '/video/purple_anim.mp4'
 
       myFleche.style.opacity = '0'
       myFleche.style.transform = 'translate(-10%, 10%)'
+    })
+  })
+
+  const h3Elements = document.querySelectorAll('h3')
+
+  h3Elements.forEach((h3) => {
+    h3.addEventListener('mouseenter', () => {
+      h3.classList.add('show')
+    })
+
+    h3.addEventListener('mouseleave', () => {
+      h3.classList.remove('show')
     })
   })
 </script>
@@ -132,27 +167,115 @@ import purpleVideo from '/video/purple_anim.mp4'
     left: 17px;
     font-family: var(--primary-font-family);
   }
+  .intro_langue {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    font-weight: 900;
+    bottom: 20px;
+    left: 30px;
+    font-family: var(--primary-font-family);
+    font-size: 28px;
+  }
+  .intro_langue h3 {
+    position: relative;
+  }
+  .intro_langue h3::after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-bottom-color: black;
+    border-bottom-width: black;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    border-bottom-style: solid;
+    opacity: 0;
+    transition: opacity 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  h3.active::after {
+    opacity: 1;
+  }
+  h3.show::after {
+    opacity: 1;
+  }
 
   .intro_hero {
     display: flex;
     flex-direction: column;
     position: absolute;
-    padding-left: 40px;
+    padding-left: 100px;
     top: 25%;
-    gap: 40px;
+
+    gap: 20px;
   }
   .intro_titre {
     font-size: var(--giant-font-size);
     font-family: var(--primary-font-family);
     line-height: 1;
-    padding-right: 25%;
+    padding-right: 30%;
     font-weight: 800;
   }
   .intro_description {
-    font-size: var(--regular-font-size);
-    font-family: var(--primary-font-family);
-    line-height: 1.1;
-    padding-right: 366px;
+    margin-top: 30px;
+    font-size: 18px;
+    font-family: var(--article-font-family);
+    line-height: 1.2;
+    padding-right: 500px;
+  }
+  .button {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    gap: 20px;
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
+    cursor: pointer;
+    border: 4px solid black;
+    border-radius: 100px;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 25px;
+    transition: opacity 0.2s;
+    .button-text {
+      cursor: pointer;
+      position: relative;
+      font-family: var(--article-font-family);
+
+      font-weight: 500;
+      font-size: 24px;
+    }
+  }
+  .button::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    content: '';
+    background: #b8fffd;
+    transition: transform 0.3s;
+  }
+
+  .button-anim {
+    overflow: hidden;
+  }
+  .button-anim::before {
+    right: auto;
+    bottom: auto;
+    width: 120%;
+    height: 100%;
+    transform-origin: right top;
+    transform: skewX(-30deg) scale(0, 1);
+  }
+  .button-anim:hover::before {
+    transform-origin: left top;
+    transform: skewX(-30deg) scale(1, 1);
   }
   .grid {
     display: grid;
@@ -177,12 +300,12 @@ import purpleVideo from '/video/purple_anim.mp4'
   .col_titre {
     display: flex;
     position: absolute;
-    margin-bottom: 120px;
+    margin-bottom: 250px;
     font-size: var(--big-font-size);
     font-family: var(--primary-font-family);
     transform: rotate(-90deg);
     font-weight: 700;
-    /* text-transform: uppercase; */
+    text-transform: uppercase;
     color: white;
     /* transform: rotate(-90deg); */
   }
