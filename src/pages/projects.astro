@@ -40,7 +40,10 @@ const next = projects.at(1)!.data
         </h2>
       </a>
       <a href={`/projects/${current.slug}`} class='links image'>
-        <img id='image' src={current.data.image} />
+        <div style='position: relative; height: 100%;' class='images'>
+          <img id='image' src={current.data.image} />
+          <div class='layer'></div>
+        </div>
       </a>
     </div>
   </div>
@@ -80,7 +83,6 @@ const next = projects.at(1)!.data
     padding: 120px 160px;
 
     background-color: transparent;
-    z-index: 100;
   }
 
   .nav-content {
@@ -172,14 +174,6 @@ const next = projects.at(1)!.data
     /* transform-origin: 100% 50%; */
   }
 
-  .titles h2.last {
-    color: transparent;
-    -webkit-text-stroke: 2px white;
-    z-index: 10;
-    position: absolute;
-    top: 0;
-  }
-
   .previous-project .titles h2.last,
   .next-project .titles h2.last {
     -webkit-text-stroke: 1px white;
@@ -221,9 +215,9 @@ const next = projects.at(1)!.data
     object-fit: cover;
   }
 
-  .image::after {
-    transition: all 0.85s cubic-bezier(0.165, 0.84, 0.44, 1);
-    content: '';
+  .layer {
+    /* transition: all 0.85s cubic-bezier(0.165, 0.84, 0.44, 1); */
+    /* content: ''; */
     background: rgb(162, 116, 210);
     padding-bottom: -20px;
     opacity: 0.4;
@@ -238,10 +232,10 @@ const next = projects.at(1)!.data
   }
 
   .wrapper h2 {
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    /* transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);ss */
   }
   .wrapper img {
-    transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    /* transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); */
   }
   .wrapper a {
     text-decoration: none;
@@ -256,12 +250,97 @@ const next = projects.at(1)!.data
   .wrapper .image.active::after {
     transform: scale(1.1);
   }
+
+  .start.up .last,
+  .start.up .first {
+    animation: 0.4s fade, 0.4s slideDown;
+  }
+
+  .start .images {
+    animation: 0.8s skewImage ease-in;
+  }
+
+  .start.down .last,
+  .start.down .first {
+    animation: 0.4s fade, 0.4s slideUp;
+  }
+
+  .stop {
+    animation: none;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(200%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(-200%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes skewImage {
+    from {
+      transform: translateX(0);
+    }
+    40%,
+    70% {
+      opacity: 0;
+      transform: translateX(300px) skew(-10deg);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  /* lancer anim 2 sur image2 quand anim1 sur image1 est fini */
+
+  .titles h2.first {
+    opacity: 1;
+    /* animation: 5s; */
+    /* transform: translateY(0); */
+  }
+
+  .titles h2.last {
+    color: transparent;
+    -webkit-text-stroke: 2px white;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    opacity: 1;
+    animation: 0.2s;
+    /* transform: translateY(175%); */
+  }
 </style>
 
 <script>
   import { listProjects } from '../entities/project/api'
 
   const projects = await listProjects()
+
+  const preloadImage = (url: string) => {
+    const img = new Image()
+    img.src = url
+  }
+
+  projects.forEach((project) => preloadImage(project.data.image))
 
   let current = 0
 
@@ -274,14 +353,24 @@ const next = projects.at(1)!.data
 
     if (!enAttente && maintenant - dernierAppel >= 1000) {
       // Mettre ici le code de votre fonction à exécuter lors du défilement de la molette
+      const section = document.querySelector('.projets')!
+      section.classList.remove('stop')
+      section.classList.add('start')
+
+      // section.classList.toggle(deltaY > 0 ? 'down' : 'up')
+
       if (deltaY > 0) {
         console.log('down', current)
+        section.classList.remove('down')
+        section.classList.add('up')
         if (current === projects.length - 1) {
           current = 0
         } else {
           current++
         }
       } else {
+        section.classList.remove('up')
+        section.classList.add('down')
         console.log('up', current)
         if (current === 0) {
           current = projects.length - 1
@@ -304,7 +393,9 @@ const next = projects.at(1)!.data
       last.children[1].innerHTML = projects.at(current)?.data.title2 || ''
 
       const image = document.querySelector('.projet #image') as HTMLImageElement
-      image.src = projects.at(current)?.data.image || ''
+      setTimeout(() => {
+        image.src = projects.at(current)?.data.image || ''
+      }, 400)
 
       const index = document.querySelector('#project-index') as HTMLSpanElement
       index.innerHTML =
@@ -337,6 +428,8 @@ const next = projects.at(1)!.data
       // Mettre en attente pendant 5 secondes avant le prochain appel
       enAttente = true
       setTimeout(() => {
+        section.classList.remove('start')
+        section.classList.add('stop')
         enAttente = false
       }, 1000)
     } else {
