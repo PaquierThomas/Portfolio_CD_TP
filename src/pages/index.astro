@@ -5,9 +5,12 @@ import blueVideo from '/video/blue_anim.mp4'
 import yellowVideo from '/video/yellow_anim.mp4'
 import orangeVideo from '/video/orange_anim.mp4'
 import purpleVideo from '/video/purple_anim.mp4'
+import BaseLayout from '../layouts/base-layout.astro'
 ---
 
-<body>
+<BaseLayout
+  description='Étudiant passionné par la 3D, je suis basé à Besançon où je crée des univers uniques grâce à mes compétences en modélisation et animation.'
+>
   <div class='container'>
     <div class='intro'>
       <h2 class='intro_icon'>Thomas.Paquier</h2>
@@ -91,7 +94,7 @@ import purpleVideo from '/video/purple_anim.mp4'
       </div>
     </div>
   </div>
-</body>
+</BaseLayout>
 
 <script>
   const grid = document.querySelector('.grid') as HTMLElement
