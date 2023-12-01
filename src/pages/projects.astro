@@ -2,6 +2,7 @@
 import '../styles/global.css'
 import { getCollection } from 'astro:content'
 import { listProjects } from '../entities/project/api'
+import BaseLayout from '../layouts/base-layout.astro'
 
 const projects = await listProjects()
 
@@ -10,59 +11,71 @@ const current = projects.at(0)!
 const next = projects.at(1)!.data
 ---
 
-<section class='projets'>
-  <div class='nav'>
-    <div class='nav-content'>
-      <div>top-left</div>
-      <div>top-right</div>
-      <div>bottom-left</div>
-      <div>bottom-right</div>
+<BaseLayout
+  title='Projets'
+  description="Bienvenue dans ma galerie de projets ! En tant qu'étudiant en 3D à Besançon. Explorez mon univers artistique et laissez-vous séduire par mes réalisations"
+>
+  <section class='projets'>
+    <div class='nav'>
+      <div class='nav-content'>
+        <div>top-left</div>
+        <div>top-right</div>
+        <div>bottom-left</div>
+        <div>bottom-right</div>
+      </div>
     </div>
-  </div>
-  <div class='previous-project'>
-    <div class='titles'>
-      <h2 class='last'>
-        <div>{previous.title}</div>
-        <div>{previous.title2}</div>
-      </h2>
-    </div>
-  </div>
-  <div class='projet'>
-    <div class='wrapper'>
-      <a href={`/projects/${current.slug}`} class='links titles current-titles'>
-        <h2 class='first'>
-          <div>{current.data.title}</div>
-          <div>{current.data.title2}</div>
-        </h2>
+    <div class='previous-project'>
+      <div class='titles'>
         <h2 class='last'>
-          <div>{current.data.title}</div>
-          <div>{current.data.title2}</div>
+          <div>{previous.title}</div>
+          <div>{previous.title2}</div>
         </h2>
-      </a>
-      <a href={`/projects/${current.slug}`} class='links image'>
-        <div style='position: relative; height: 100%;' class='images'>
-          <img id='image' src={current.data.image} />
-          <div class='layer'></div>
-        </div>
-      </a>
+      </div>
     </div>
-  </div>
-  <div class='index'>
-    <span id='project-index'>01</span><span
-      style='font-weight: 400; font-size: 1.2vw'>&#10187;</span
-    ><span class='project-total'
-      >{projects.length < 10 ? `0${projects.length}` : projects.length}</span
-    >
-  </div>
-  <div class='next-project'>
-    <div class='titles'>
-      <h2 class='last'>
-        <div>{next.title}</div>
-        <div>{next.title2}</div>
-      </h2>
+    <div class='projet'>
+      <div class='wrapper'>
+        <a
+          href={`/projects/${current.slug}`}
+          class='links titles current-titles'
+        >
+          <h2 class='first'>
+            <div>{current.data.title}</div>
+            <div>{current.data.title2}</div>
+          </h2>
+          <h2 class='last'>
+            <div>{current.data.title}</div>
+            <div>{current.data.title2}</div>
+          </h2>
+        </a>
+        <a
+          href={`/projects/${current.slug}`}
+          aria-label='lien vers le projet actuel'
+          class='links image'
+        >
+          <div style='position: relative; height: 100%;' class='images'>
+            <img id='image' src={current.data.image} alt='image du projet' />
+            <div class='layer'></div>
+          </div>
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+    <div class='index'>
+      <span id='project-index'>01</span><span
+        style='font-weight: 400; font-size: 1.2vw'>&#10187;</span
+      ><span class='project-total'
+        >{projects.length < 10 ? `0${projects.length}` : projects.length}</span
+      >
+    </div>
+    <div class='next-project'>
+      <div class='titles'>
+        <h2 class='last'>
+          <div>{next.title}</div>
+          <div>{next.title2}</div>
+        </h2>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
 
 <style>
   * {
