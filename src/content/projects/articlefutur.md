@@ -1,7 +1,7 @@
 ---
 title: TAMAKI HOME
 title2: CORPORATE SITE
-image: '\photo_tp.jpg'
+image: '\photo_tp.webp'
 date_parution: 2023-11-29
 client: GOPOS
 slug: 'article-futur'

@@ -1,7 +1,7 @@
 ---
 title: Kazuki
 title2: Portfolio
-image: '/test.jpg'
+image: '/test.webp'
 date_parution: 2023-10-05
 client: GOPOS
 slug: 'refonte-portfolio'
