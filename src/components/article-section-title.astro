@@ -1,0 +1,73 @@
+---
+import '../styles/global.css'
+import type { Project } from '../content/config'
+
+type Props = {
+  sectionTitle: Project['sectionTitle']
+}
+const { title, shortDescription } = Astro.props
+---
+
+<div class='text-right'>
+  <h3 class='h3-title'>{title}</h3>
+  <p class='h2-subheading cd small'>
+    {shortDescription}
+  </p>
+</div>
+
+<style scoped>
+  .text-right {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 600px;
+    max-width: 800px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 0px;
+    padding-bottom: 0px;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    align-self: flex-start;
+  }
+  .h3-title {
+    margin-top: 0px;
+    padding-bottom: 10px;
+    align-self: flex-start;
+    flex: 0 auto;
+    font-family: Recoleta, Georgia, sans-serif;
+    color: #000;
+    font-size: 62px;
+    line-height: 1.1;
+  }
+  .h2-subheading {
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+  }
+
+  .h2-subheading.cd {
+    max-width: 800px;
+    padding-top: 0px;
+    padding-right: 60px;
+    padding-left: 0px;
+    font-family: Proximanova, sans-serif;
+    font-size: 19px;
+    font-weight: 200;
+  }
+
+  .h2-subheading.cd.small {
+    max-width: none;
+    padding-top: 10px;
+    padding-right: 30px;
+    font-weight: 100;
+    align-self: flex-start;
+
+    flex: 1;
+  }
+</style>

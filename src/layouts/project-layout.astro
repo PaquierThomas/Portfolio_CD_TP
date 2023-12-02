@@ -1,12 +1,14 @@
 ---
+import '../styles/global.css'
 import type { Project } from '../content/config'
 import ArticleTextBlock from '../components/article-text-block.astro'
 import ArticleProsCons from '../components/article-pros-cons.astro'
+import ArticleSectionTitle from '../components/article-section-title.astro'
+import ArticleImage from '../components/article-image.astro'
 
 type Props = Project & {}
 
 const props = Astro.props
-import '../styles/global.css'
 ---
 
 <main class='main'>
@@ -48,6 +50,8 @@ import '../styles/global.css'
   </section>
   <section class='container'>
     <div class='section_content'>
+      {props.sectionTitle && <ArticleSectionTitle {...props.sectionTitle} />}
+      {props.image && <ArticleImage {...props.image} />}
       {props.textblock && <ArticleTextBlock {...props.textblock} />}
       {props.procons && <ArticleProsCons procons={props.procons} />}
     </div>
@@ -56,7 +60,7 @@ import '../styles/global.css'
   <slot />
 </main>
 
-<style define:vars={{ projectImage: `url(${props.image})` }}>
+<style define:vars={{ projectImage: `url(${props.imageCouverture})` }}>
   .container {
     font-family: var(--article-font-family);
 

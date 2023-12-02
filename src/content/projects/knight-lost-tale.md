@@ -1,7 +1,7 @@
 ---
 title: THE MEDIA
 title2: GARDEN
-image: '/MuseAic.webp'
+imageCouverture: '/MuseAic.webp'
 client: GOPOS
 slug: 'knight-lost-tale'
 date_parution: 2023-11-01

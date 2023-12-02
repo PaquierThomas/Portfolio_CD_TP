@@ -1,7 +1,7 @@
 ---
 title: Kazuki
 title2: Portfolio
-image: '/test.webp'
+imageCouverture: '/test.webp'
 date_parution: 2023-10-05
 client: GOPOS
 slug: 'refonte-portfolio'
@@ -15,6 +15,14 @@ annee:
 subject: Sujet de la nature
 summary: lorea^doap ead aemdla, poda,npo dmazd lad ,apo ,almd al
 # Composant paragraphe, si je mets ces données ça apparait dans le layout
+image:
+  src: /image-article/crypt2.webp
+  alt: image d'une crypte
+
+sectionTitle:
+  title: Titre de section
+  shortDescription: lorem ipsum dolores est y tuti cuanti con la pab pizza et si multiplos pabneau solaires
+
 textblock:
   title:
     highlightTitle: Accelarated speed,

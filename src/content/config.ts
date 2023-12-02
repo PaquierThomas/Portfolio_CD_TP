@@ -4,7 +4,7 @@ export const projectSchema = z.object({
   title: z.string(),
   title2: z.string(),
   date_parution: z.date(),
-  image: z.string(),
+  imageCouverture: z.string(),
   client: z.string(),
   roles: z.array(z.string()),
   annee: z.object({
@@ -13,6 +13,21 @@ export const projectSchema = z.object({
   }),
   subject: z.string(),
   summary: z.string(),
+
+  image: z
+    .object({
+      src: z.string(),
+      alt: z.string(),
+      caption: z.string().optional(),
+    })
+    .optional(),
+
+  sectionTitle: z
+    .object({
+      title: z.string(),
+      shortDescription: z.string(),
+    })
+    .optional(),
 
   procons: z
     .array(

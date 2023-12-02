@@ -6,7 +6,78 @@ import ArticleProsCons from '../../components/article-pros-cons.astro'
 import ArticleTextBlock from '../../components/article-text-block.astro'
 import myPlus from '/plus_icon.png'
 import myCheck from '/check_icon.png'
+import ArticleSectionTitle from '../../components/article-section-title.astro'
+import ArticleImage from '../../components/article-image.astro'
 ---
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('img[data-enlargable]').forEach(function (img) {
+      img.classList.add('img-enlargable')
+      let isInFullScreen = false
+
+      const handleMouseEnter = function () {
+        if (!isInFullScreen) {
+          img.style.outline = '2px solid blue'
+          img.style.transition = 'transform 0.3s ease'
+          img.style.cursor = 'pointer'
+          img.style.transform = 'scale(1.05)'
+        }
+      }
+
+      const handleMouseLeave = function () {
+        if (!isInFullScreen) {
+          img.style.outline = 'none'
+          img.style.transform = 'scale(1)'
+        }
+      }
+
+      const handleClick = function () {
+        img.removeEventListener('mouseenter', handleMouseEnter)
+        img.removeEventListener('mouseleave', handleMouseLeave)
+
+        var src = this.getAttribute('src')
+        var enlargedImage = document.createElement('div')
+        enlargedImage.style.cssText = `
+          background: RGBA(0,0,0,.5) url(${src}) no-repeat center;
+          background-size: contain;
+          width: 100vw;
+          height: 100vh;
+          position: fixed;
+          z-index: 10000;
+          top: 0;
+          left: 0;
+          cursor: zoom-out;
+          opacity: 0;
+          transition: opacity 0.5s ease; /* Transition pour l'entrée et la sortie */
+        `
+
+        enlargedImage.addEventListener('click', function () {
+          document.body.removeChild(enlargedImage)
+          document.body.style.overflow = 'visible' // Réactiver l'overflow
+          isInFullScreen = false
+          img.addEventListener('mouseenter', handleMouseEnter)
+          img.addEventListener('mouseleave', handleMouseLeave)
+        })
+
+        document.body.appendChild(enlargedImage)
+        document.body.style.overflow = 'hidden' // Bloquer l'overflow
+
+        if (!isInFullScreen) {
+          setTimeout(() => {
+            enlargedImage.style.opacity = '1'
+          }, 10)
+
+          isInFullScreen = true
+        }
+      }
+
+      img.addEventListener('click', handleClick)
+      img.addEventListener('mouseenter', handleMouseEnter)
+      img.addEventListener('mouseleave', handleMouseLeave)
+    })
+  })
+</script>
 
 <main class='main'>
   <section class='article'>
@@ -75,6 +146,8 @@ transform-style: preserve-3d;'
 
   <section class='container'>
     <div class='section_content'>
+      <!-- <img data-enlargable src='/image-article/crypt2.webp' alt='image test' /> -->
+      <ArticleImage src={'/image-article/crypt2.webp'} alt={"image d'une crypte"} />
       <!-- <ArticleProsCons title='Results' image={myPlus}>
         <ul class='section_row_list'>
           <li>Adapted Life Is Strange 2 for Nintendo Switch and Stadia</li>
@@ -161,6 +234,13 @@ transform-style: preserve-3d;'
     background-color: white;
   }
 
+  img {
+    display: inline-block;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 40px;
+    box-sizing: border-box; /* Utilisation de box-sizing pour inclure la bordure dans la taille de l'image */
+  }
   .container {
     font-family: var(--article-font-family);
 
