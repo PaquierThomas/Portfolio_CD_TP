@@ -25,7 +25,7 @@ sectionTitle:
 
 textblock:
   title:
-    highlightTitle: Accelarated speed,
+    highlightTitle: Accelerated speed,
     secondPartTitle: on the market
   summary:
     While choosing to upgrade the game to a Stadia-supported UE4 version was
