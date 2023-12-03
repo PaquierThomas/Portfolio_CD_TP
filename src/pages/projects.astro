@@ -51,7 +51,11 @@ const next = projects.at(1)!.data
           class='links image'
         >
           <div style='position: relative; height: 100%;' class='images'>
-            <img id='image' src={current.data.imageCouverture} alt='image du projet' />
+            <img
+              id='image'
+              src={current.data.imageCouverture}
+              alt='image du projet'
+            />
             <div class='layer'></div>
           </div>
         </a>
@@ -351,7 +355,7 @@ const next = projects.at(1)!.data
     img.src = url
   }
 
-  projects.forEach((project) => preloadImage(project.data.image))
+  projects.forEach((project) => preloadImage(project.data.imageCouverture))
 
   let current = 0
 
@@ -405,7 +409,7 @@ const next = projects.at(1)!.data
 
       const image = document.querySelector('.projet #image') as HTMLImageElement
       setTimeout(() => {
-        image.src = projects.at(current)?.data.image || ''
+        image.src = projects.at(current)?.data.imageCouverture || ''
       }, 400)
 
       const index = document.querySelector('#project-index') as HTMLSpanElement
