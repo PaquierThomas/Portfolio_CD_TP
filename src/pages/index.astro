@@ -1,5 +1,4 @@
 ---
-
 import myFleche from '/fleche.svg'
 import blueVideo from '/video/blue_anim.mp4'
 import yellowVideo from '/video/yellow_anim.mp4'
@@ -26,7 +25,7 @@ import BaseLayout from '../layouts/base-layout.astro'
         </p>
 
         <div class='button button-anim'>
-          <p class='button-text'>Discover my work</p>
+          <a href='/projects' class='button-text'>Discover my work</a>
           <svg
             width='36px'
             height='36px'
@@ -48,29 +47,29 @@ import BaseLayout from '../layouts/base-layout.astro'
       </div>
     </div>
     <div class='grid'>
-      <div class='col_blue'>
+      <a href='/projects' class='col_blue'>
         <img
           src={myFleche}
           alt='une flèche qui pointe vers une autre page'
           class='col_icon'
         />
-        <h2 class='col_titre'>MODELISATION</h2>
+        <h2 class='col_titre'>Projects</h2>
         <video loop muted>
           <source src={blueVideo} type='video/mp4' />
         </video>
-      </div>
-      <div class='col_red'>
+      </a>
+      <a href='#' class='col_red'>
         <img
           src={myFleche}
           alt='une flèche qui pointe vers une autre page'
           class='col_icon'
         />
-        <h2 class='col_titre'>Calendar</h2>
+        <h2 class='col_titre'>DRAWING</h2>
         <video loop muted>
           <source src={yellowVideo} type='video/mp4' />
         </video>
-      </div>
-      <div class='col_yellow'>
+      </a>
+      <a href='#' class='col_yellow'>
         <img
           src={myFleche}
           alt='une flèche qui pointe vers une autre page'
@@ -80,8 +79,8 @@ import BaseLayout from '../layouts/base-layout.astro'
         <video loop muted>
           <source src={orangeVideo} type='video/mp4' />
         </video>
-      </div>
-      <div class='col_purple'>
+      </a>
+      <a href='contact' class='col_purple'>
         <img
           src={myFleche}
           alt='une flèche qui pointe vers une autre page'
@@ -91,14 +90,14 @@ import BaseLayout from '../layouts/base-layout.astro'
         <video loop muted>
           <source src={purpleVideo} type='video/mp4' />
         </video>
-      </div>
+      </a>
     </div>
   </div>
 </BaseLayout>
 
 <script>
   const grid = document.querySelector('.grid') as HTMLElement
-  const items = document.querySelectorAll('.grid > div')
+  const items = document.querySelectorAll('.grid > a')
 
   items.forEach((item, index) => {
     const video = item.querySelector('video')
@@ -149,6 +148,13 @@ import BaseLayout from '../layouts/base-layout.astro'
   body {
     margin: 0px;
     padding: 0px;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  a:hover {
+    color: white;
   }
   h2 {
     font-family: var(--bigger-font-size);
@@ -272,6 +278,9 @@ import BaseLayout from '../layouts/base-layout.astro'
 
   .button-anim {
     overflow: hidden;
+  }
+  .button-anim:hover a {
+    color: white;
   }
   .button-anim::before {
     right: auto;

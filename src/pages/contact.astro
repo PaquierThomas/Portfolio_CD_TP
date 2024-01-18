@@ -1,48 +1,112 @@
 ---
 import '../styles/global.css'
+import MyFleche from '../../public/fleche.svg'
+import photo_tp from '../../public/photo_tp.jpg'
 ---
 
+<script>
+  //  When hover on h3 put the opacity of h3::after at 1 and when mouseleave put opacity at 0
+  const h3Elements = document.querySelectorAll('h3')
+
+  h3Elements.forEach((h3) => {
+    h3.addEventListener('mouseenter', () => {
+      h3.classList.add('show')
+    })
+
+    h3.addEventListener('mouseleave', () => {
+      h3.classList.remove('show')
+    })
+  })
+</script>
+
 <body>
+  <header>
+    <div class='wrapper-row'>
+      <div class='left-part'>
+        <h2><a href='/#'>Thomas Paquier</a></h2>
+        <hr />
+        <h3><a href='/projects'>Projects</a></h3>
+        <h3><a href='/projects'>Webdesign</a></h3>
+        <h3><a href='#'>Drawings</a></h3>
+        <h3 class='active'>About</h3>
+      </div>
+      <div class='right-part'>
+        <h3 class='active'>EN</h3>
+        <h3>FR</h3>
+      </div>
+    </div>
+  </header>
+
   <section class='container'>
     <div class='section_content'>
-      <h2 class='section_title'>key highlights</h2>
-      <div class='section_col'>
-        <div class='col'>
-          <h3 class='col_title'>Gameplay</h3>
-          <ul class='col_description'>
-            <!-- <li class="col_description_element"></li> -->
-            <li>Improved the cover system decreasing level loading time</li>
-            <li>Improved player movement system</li>
-            <li>
-              Implemented gamepads supportand vendor specific features for
-              Sony,Xbox, Steam, and Nintendo controllers.
-            </li>
-          </ul>
+      <div class='first-half'>
+        <div class='section_infos'>
+          <h4 class='section_title'>Bonjour!</h4>
+          <h4 class='section_subtitle'>
+            I'm Thomas. France based <span
+              class='section_subtitle_span_modeleur'
+              ><a href='https://thomas_paquier.artstation.com/' target='_blank'
+                >3D Artist</a
+              ></span
+            >
+            & <span class='section_subtitle_span_web'
+              ><a href='/projects'>WebDevelopper</a></span
+            > / <span class='section_subtitle_span_web'
+              ><a href='/drawing'>Novice illustrator</a></span
+            >
+          </h4>
+          <p>
+            I've worked as a Web Developper and Web Designer at Visiperf,
+            collaborating with colleagues and clients such as Mazda, KFC and
+            Franck Provost.
+          </p>
+          <p>
+            Eagerly diving into the 3D art scene, I'm on the lookout for fresh
+            opportunities to shape my creative journey and carve out a vibrant
+            path in the digital realm
+          </p>
+          <p>
+            Interweaving storytelling and composition across drawing, 3D art,
+            and web development, I weave stories through composition, striving
+            to reshape the artistic landscape with a touch of innovation.
+          </p>
         </div>
-        <div class='col'>
-          <h3 class='col_title'>Rendering & UI</h3>
-          <ul class='col_description'>
-            <!-- <li class="col_description_element"></li> -->
-            <li>Improved the cover system decreasing level loading time</li>
-            <li>Improved player movement system</li>
-            <li>
-              Implemented gamepads supportand vendor specific features for
-              Sony,Xbox, Steam, and Nintendo controllers.
-            </li>
-          </ul>
+        <div class='section_socials'>
+          <a
+            href='thomas.paquier.pro@gmail.com'
+            target='_blank'
+            class='section_socials_elements'
+          >
+            <p>GET IN TOUCH</p>
+            <img src={MyFleche} alt='une fleche de redirection' />
+          </a>
+          <a
+            href='https://www.linkedin.com/in/thomas-paquier-663b16223/'
+            target='_blank'
+            class='section_socials_elements'
+          >
+            <p>LINKEDIN</p>
+            <img src={MyFleche} alt='une fleche de redirection' />
+          </a>
+          <a
+            href='https://thomas_paquier.artstation.com/'
+            target='_blank'
+            class='section_socials_elements'
+          >
+            <p>ARTSTATION</p>
+            <img src={MyFleche} alt='une fleche de redirection' />
+          </a>
+          <a
+            href='https://www.instagram.com/thomas_paquier/'
+            class='section_socials_elements'
+          >
+            <p>INSTAGRAM</p>
+            <img src={MyFleche} alt='une fleche de redirection' />
+          </a>
         </div>
-        <div class='col'>
-          <h3 class='col_title'>Networking</h3>
-          <ul class='col_description'>
-            <!-- <li class="col_description_element"></li> -->
-            <li>Improved the cover system decreasing level loading time</li>
-            <li>Improved player movement system</li>
-            <li>
-              Implemented gamepads supportand vendor specific features for
-              Sony,Xbox, Steam, and Nintendo controllers.
-            </li>
-          </ul>
-        </div>
+      </div>
+      <div class='second-half'>
+        <img src={photo_tp} alt='Image de thomas paquier' />
       </div>
     </div>
   </section>
@@ -50,72 +114,154 @@ import '../styles/global.css'
 
 <style scoped>
   body {
-    background: #181a1b;
+    background: black;
+    font-family: var(--article-second-font-family);
   }
-
-  .container {
-    font-family: var(--article-font-family);
-
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-
-    width: 1440px;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 100px 110px;
-  }
-  .section_content {
-    display: flex;
-    flex-direction: row;
-    gap: 75px;
-  }
-  .section_title {
-    display: block;
+  a {
+    text-decoration: none;
     color: white;
-    align-self: start;
-    font-size: 50px;
-    line-height: 60px;
   }
-  .section_col {
+
+  .wrapper-row {
     display: flex;
     flex-direction: row;
-    gap: 80px;
-  }
-  .col {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 260px;
-  }
-  .col_title {
-    font-size: 30px;
-    font-weight: 500;
-    color: #ffffff;
-  }
-  .col_description {
-    padding: 0;
-  }
-  .col_description li {
-    position: relative;
-    font-size: 16px;
-    line-height: 28px;
-    letter-spacing: normal;
-    font-weight: 400;
-    padding-left: 25px;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    margin: 2rem;
+    /* padding: 90px 110px 0; grand écran */
+    padding: 50px 110px 0;
 
-    color: #ffffff;
-    list-style: none;
+    font-weight: 400;
+    /* font-size: 26px; grand écran */
+    font-size: 20px; /* Ecran moyen (mon pc)*/
+    line-height: 1.154;
+    letter-spacing: 0.007em;
   }
-  .col_description li::before {
+  .wrapper-row h3 {
+    position: relative;
+  }
+  .wrapper-row h3::after {
     content: '';
     display: block;
     position: absolute;
-    top: 12px;
-    left: 10px;
-    width: 4px;
-    height: 4px;
-    background: #ffffff;
-    border-radius: 50%;
+    border-bottom-color: #fff;
+    border-bottom-width: #fff;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    border-bottom-style: solid;
+    opacity: 0;
+    transition: opacity 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  h3.active::after {
+    opacity: 1;
+  }
+  h3.show::after {
+    opacity: 1;
+  }
+
+  .left-part {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+  }
+  hr {
+    width: 4vw;
+    border: 1px solid white;
+  }
+
+  .right-part {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+
+  /* .container {
+    font-family: var(--article-font-family);
+
+    height: auto;
+    min-height: 715px;
+    color: white;
+    padding: 60px 110px;
+    margin: 0 auto;
+    width: 1440px;
+    max-width: 100%;
+  } */
+  .section_content {
+    font-family: var(--article-font-family);
+    color: white;
+    /* padding: 100px 250px 0; grand écran  */
+    padding: 50px 200px 0;
+
+    /* width: 100%; */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .first-half {
+    width: 40vw;
+    margin-left: 150px;
+  }
+  .section_infos {
+    display: flex;
+    flex-direction: column;
+    /* gap: 50px; A modifier en changeant la taille de police/ POUR GRAND ECRAN  */
+    gap: 20px;
+  }
+  .section_title {
+    /* padding-bottom: 30px; grand écran */
+  }
+  .section_subtitle {
+    margin-bottom: 20px;
+  }
+  .section_subtitle span {
+    text-decoration: underline;
+  }
+  .section_infos h4 {
+    /* font-size: 2rem; grand écran */
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    letter-spacing: 0.025rem;
+  }
+  .section_socials {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    /* margin-top: 50px; grand écran */
+    margin-top: 150px;
+  }
+  .section_socials img {
+    height: 3rem;
+    width: 3rem;
+  }
+  .section_socials_elements {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    gap: 5px;
+    color: white;
+    text-decoration: none;
+  }
+
+  .second-half {
+    width: 30vw;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .second-half img {
+    /* padding-right: 131px; grand écran */
+    padding-left: 120px;
+    height: auto;
+    width: 100%;
   }
 </style>
