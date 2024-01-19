@@ -5,6 +5,7 @@ import yellowVideo from '/video/yellow_anim.mp4'
 import orangeVideo from '/video/orange_anim.mp4'
 import purpleVideo from '/video/purple_anim.mp4'
 import BaseLayout from '../layouts/base-layout.astro'
+import '../styles/global.css'
 ---
 
 <BaseLayout
@@ -12,7 +13,12 @@ import BaseLayout from '../layouts/base-layout.astro'
 >
   <div class='container'>
     <div class='intro'>
-      <h2 class='intro_icon'>Thomas.Paquier</h2>
+      <div class='intro_icon'>
+        <a href='/'>
+          <h2>THOMAS</h2>
+          <h2>PAQUIER</h2>
+        </a>
+      </div>
 
       <div class='intro_hero'>
         <h2 class='intro_titre'>ONE PERSON, THREE CREATIVE SPHERES</h2>
@@ -148,10 +154,11 @@ import BaseLayout from '../layouts/base-layout.astro'
   body {
     margin: 0px;
     padding: 0px;
+    background: var(--bg-color);
   }
   a {
     text-decoration: none;
-    color: black;
+    color: var(--text-color);
   }
   a:hover {
     color: white;
@@ -176,9 +183,17 @@ import BaseLayout from '../layouts/base-layout.astro'
   .intro_icon {
     position: absolute;
     font-weight: 900;
-    top: 12px;
-    left: 17px;
+    top: 30px;
+    left: 30px;
     font-family: var(--primary-font-family);
+    color: var(--text-color);
+    a > h2 {
+      font-size: 14px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      letter-spacing: 3px;
+    }
   }
   .intro_langue {
     display: flex;
@@ -191,6 +206,7 @@ import BaseLayout from '../layouts/base-layout.astro'
     left: 30px;
     font-family: var(--primary-font-family);
     font-size: 28px;
+    color: var(--text-color);
   }
   .intro_langue h3 {
     position: relative;
@@ -199,7 +215,7 @@ import BaseLayout from '../layouts/base-layout.astro'
     content: '';
     display: block;
     position: absolute;
-    border-bottom-color: black;
+    border-bottom-color: var(--text-color);
     bottom: -2px;
     left: 0;
     width: 100%;
@@ -230,11 +246,13 @@ import BaseLayout from '../layouts/base-layout.astro'
     padding-right: 00px;
     font-weight: 800;
     font-size: clamp(1rem, 20vw, 6rem);
+    color: var(--text-color);
   }
   .intro_description {
     margin-top: 30px;
     font-size: 18px;
     font-family: var(--article-font-family);
+    color: var(--text-color);
     line-height: 1.2;
     padding-right: 500px;
   }
@@ -248,7 +266,7 @@ import BaseLayout from '../layouts/base-layout.astro'
     height: fit-content;
     padding: 0;
     cursor: pointer;
-    border: 4px solid black;
+    border: 4px solid var(--text-color);
     border-radius: 100px;
     justify-content: center;
     align-items: center;
@@ -262,9 +280,15 @@ import BaseLayout from '../layouts/base-layout.astro'
       font-weight: 500;
       font-size: 24px;
     }
+    svg {
+      fill: var(--text-color);
+    }
     &:hover {
-      color: white;
-      fill: white;
+      color: black;
+      fill: black;
+      svg {
+        fill: black;
+      }
     }
   }
 
@@ -276,7 +300,7 @@ import BaseLayout from '../layouts/base-layout.astro'
     left: 0;
     z-index: -1;
     content: '';
-    background: black;
+    background: var(--text-color);
     transition: transform 0.3s;
   }
 
@@ -284,7 +308,7 @@ import BaseLayout from '../layouts/base-layout.astro'
     overflow: hidden;
   }
   .button-anim:hover a {
-    color: white;
+    color: black;
   }
   .button-anim::before {
     right: auto;

@@ -1,6 +1,7 @@
 ---
 import { listProjects } from '../entities/project/api'
 import BaseLayout from '../layouts/base-layout.astro'
+import '../styles/global.css'
 
 const projects = await listProjects()
 
@@ -111,13 +112,13 @@ const next = projects.at(1)!.data
   .nav-content {
     position: relative;
     height: 100%;
-    color: #e8e6e3;
+    color: var(--text-color);
     font-family: aktiv-grotesk, sans-serif;
     font-weight: 600;
     text-transform: uppercase;
     a {
       text-decoration: none;
-      color: #e8e6e3;
+      color: var(--text-color);
     }
   }
   .nav-content div:first-child {
@@ -182,7 +183,7 @@ const next = projects.at(1)!.data
 
   .projets {
     height: 100vh;
-    background-color: rgb(20, 31, 42);
+    background-color: var(--bg-color);
     overflow: hidden;
   }
 
@@ -213,7 +214,7 @@ const next = projects.at(1)!.data
   .titles h2 {
     font-weight: 800;
     font-size: 6vw;
-    color: white;
+    color: var(--text-color);
     font-style: normal;
     line-height: 100%;
     /* transform-origin: 100% 50%; */
@@ -221,7 +222,7 @@ const next = projects.at(1)!.data
 
   .previous-project .titles h2.last,
   .next-project .titles h2.last {
-    -webkit-text-stroke: 1px white;
+    -webkit-text-stroke: 1px var(--text-color);
   }
 
   .content-left {
@@ -236,7 +237,7 @@ const next = projects.at(1)!.data
     position: absolute;
     bottom: 0;
     font-size: 1.7vw;
-    color: white;
+    color: var(--text-color);
     font-weight: 600;
     top: 68.5%;
     left: 16.4%;
@@ -365,7 +366,7 @@ const next = projects.at(1)!.data
 
   .titles h2.last {
     color: transparent;
-    -webkit-text-stroke: 2px white;
+    -webkit-text-stroke: 2px var(--text-color);
     z-index: 10;
     position: absolute;
     top: 0;

@@ -3,6 +3,8 @@
 :root {
   --primary-color: #f48e28;
   --secondary-color: #f5ddc4;
+  --bg-color: rgb(20, 31, 42);
+  --text-color: #e8e6e3;
 
   --tiny-font-size: 10px;
   --small-font-size: 14px;
