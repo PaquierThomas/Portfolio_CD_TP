@@ -61,6 +61,10 @@ const props = Astro.props
 </main>
 
 <style define:vars={{ projectImage: `url(${props.imageCouverture})` }}>
+  body {
+    background: var(--bg-color);
+  }
+
   .container {
     font-family: var(--article-font-family);
 
@@ -68,7 +72,7 @@ const props = Astro.props
     justify-content: space-between;
     flex-direction: column;
     /* color: #e8e6e3;  pour le dark mode */
-    color: black;
+    color: var(--text-color);
 
     width: 1220px;
     /* width: 1440px; for big screens */
@@ -145,7 +149,7 @@ const props = Astro.props
     align-self: stretch;
     flex: 1;
     font-family: Proximanova, sans-serif;
-    color: #141414;
+    color: var(--text-color);
     font-size: 12px;
     line-height: 1.6;
     font-weight: 800;
@@ -157,7 +161,7 @@ const props = Astro.props
   .paragraph-left.normal {
     padding-bottom: 4px;
     font-family: Proximanova, sans-serif;
-    color: #000;
+    color: var(--text-color);
     line-height: 1.5;
     font-weight: 300;
   }
@@ -238,7 +242,7 @@ const props = Astro.props
     align-self: flex-start;
     flex: 0 auto;
     font-family: Recoleta, Georgia, sans-serif;
-    color: #000;
+    color: var(--text-color);
     font-size: 62px;
     line-height: 1.1;
   }
@@ -255,6 +259,7 @@ const props = Astro.props
     font-family: Proximanova, sans-serif;
     font-size: 19px;
     font-weight: 200;
+    color: var(--text-color);
   }
 
   .h2-subheading.cd.small {

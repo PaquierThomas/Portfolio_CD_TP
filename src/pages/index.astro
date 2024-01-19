@@ -388,6 +388,17 @@ import '../styles/global.css'
     z-index: 1;
   }
 
+  .col_purple::after,
+  .col_blue::after,
+  .col_yellow::after,
+  .col_red::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 31, 42, 0.5);
+    z-index: 0;
+  }
   .col_red {
     position: relative;
     background: #f00;
@@ -396,6 +407,20 @@ import '../styles/global.css'
     flex-direction: column;
     justify-content: end;
     align-items: center;
+  }
+  .col_red::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(49, 49, 49, 0.8);
+    z-index: 0;
+  }
+  .col_red:hover::after,
+  .col_blue:hover::after,
+  .col_yellow:hover::after,
+  .col_purple:hover::after {
+    opacity: 0;
   }
   .col_red video {
     position: absolute;
