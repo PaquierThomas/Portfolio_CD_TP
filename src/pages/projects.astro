@@ -16,10 +16,18 @@ const next = projects.at(1)!.data
   <section class='projets'>
     <div class='nav'>
       <div class='nav-content'>
-        <div>top-left</div>
-        <div>top-right</div>
-        <div>bottom-left</div>
-        <div>bottom-right</div>
+        <div class='top-left'>
+          <a href='/'>
+            <h3>THOMAS</h3>
+            <h3>PAQUIER</h3>
+          </a>
+        </div>
+        <div class='top-right'>
+          <a href='#'>Drawing</a>
+          <a href='/contact'>Contact</a>
+        </div>
+        <div><h3>3D Modeler</h3> <h3>Web Developper</h3></div>
+        <div>@Thomas.Paquier</div>
       </div>
     </div>
     <div class='previous-project'>
@@ -103,27 +111,49 @@ const next = projects.at(1)!.data
   .nav-content {
     position: relative;
     height: 100%;
-    color: white;
+    color: #e8e6e3;
+    font-family: aktiv-grotesk, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    a {
+      text-decoration: none;
+      color: #e8e6e3;
+    }
   }
   .nav-content div:first-child {
     position: absolute;
     top: 0;
     left: 0;
+    a > h3 {
+      font-size: 14px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      letter-spacing: 5px;
+    }
   }
   .nav-content div:nth-child(3) {
     position: absolute;
     bottom: 0;
     left: 0;
+    font-size: 10px;
   }
   .nav-content div:last-child {
     position: absolute;
     bottom: 0;
     right: 0;
+    font-size: 10px;
   }
   .nav-content div:nth-child(2) {
     position: absolute;
     top: 0;
     right: 0;
+    font-size: 12px;
+    letter-spacing: 1.4px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-end;
   }
 
   .previous-project {
@@ -152,7 +182,7 @@ const next = projects.at(1)!.data
 
   .projets {
     height: 100vh;
-    background: #333;
+    background-color: rgb(20, 31, 42);
     overflow: hidden;
   }
 

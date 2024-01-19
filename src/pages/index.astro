@@ -75,8 +75,8 @@ import BaseLayout from '../layouts/base-layout.astro'
           alt='une flèche qui pointe vers une autre page'
           class='col_icon'
         />
-        <h2 class='col_titre'>Explore</h2>
-        <video loop muted>
+        <h2 class='col_titre' id='comingsoon'>Coming Soon</h2>
+        <video id='videoClip' loop muted>
           <source src={orangeVideo} type='video/mp4' />
         </video>
       </a>
@@ -87,7 +87,7 @@ import BaseLayout from '../layouts/base-layout.astro'
           class='col_icon'
         />
         <h2 class='col_titre'>Contact</h2>
-        <video loop muted>
+        <video id='videoClip' loop muted>
           <source src={purpleVideo} type='video/mp4' />
         </video>
       </a>
@@ -158,6 +158,10 @@ import BaseLayout from '../layouts/base-layout.astro'
   }
   h2 {
     font-family: var(--bigger-font-size);
+  }
+
+  #comingsoon {
+    width: 440px;
   }
 
   .container {
