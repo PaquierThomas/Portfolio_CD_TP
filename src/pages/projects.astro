@@ -59,7 +59,7 @@ const next = projects.at(1)!.data
           aria-label='lien vers le projet actuel'
           class='links image'
         >
-          <div style='position: relative; height: 100%;' class='images'>
+          <div class='images'>
             <img
               id='image'
               src={current.data.imageCouverture}
@@ -219,6 +219,10 @@ const next = projects.at(1)!.data
     line-height: 100%;
     /* transform-origin: 100% 50%; */
   }
+  .images {
+    position: relative;
+    height: 100%;
+  }
 
   .previous-project .titles h2.last,
   .next-project .titles h2.last {
@@ -249,7 +253,7 @@ const next = projects.at(1)!.data
   .image {
     position: fixed;
     left: 40%;
-    /* Modifier taille d'image dans projects carrouse */
+    /* Modifier taille d'image dans projects carrousel */
     width: 1029px;
     height: 643px;
 
@@ -374,6 +378,23 @@ const next = projects.at(1)!.data
     animation: 0.2s;
     /* transform: translateY(175%); */
   }
+
+  @media only screen and (max-width: 1599px) {
+    .nav {
+      padding: 70px 80px;
+    }
+    .image {
+      width: 800px;
+      height: 500px;
+      left: 38%;
+    }
+    .next-project {
+      transform: translateY(calc(-307px / 2.6));
+    }
+    .index {
+      font-size: 2vw;
+    }
+  }
 </style>
 
 <script>
@@ -477,7 +498,7 @@ const next = projects.at(1)!.data
         section.classList.remove('start')
         section.classList.add('stop')
         enAttente = false
-      }, 1000)
+      }, 1600)
     } else {
       console.log('Veuillez patienter avant le prochain appel.')
     }
