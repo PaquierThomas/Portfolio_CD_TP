@@ -22,15 +22,15 @@ import '../styles/global.css'
 
       <div class='intro_hero'>
         <h2 class='intro_titre'>ONE PERSON, THREE CREATIVE SPHERES</h2>
-        <p class='intro_description'>
+        <!-- <p class='intro_description'>
           Welcome to my creative space. Explore my varied works, each a
           testament to unique passion and vision. Open to exciting
           collaborations to push the boundaries of my craft. I hope this
           collection ignites inspiration within you, reflecting the evolution of
           my creative path.
-        </p>
+        </p> -->
 
-        <div class='button button-anim'>
+        <!-- <div class='button button-anim'>
           <a href='/projects' class='button-text'>Discover my work</a>
           <a href='/projects'>
             <svg
@@ -47,7 +47,7 @@ import '../styles/global.css'
                 fill-rule='nonzero'></path></svg
             >
           </a>
-        </div>
+        </div> -->
       </div>
       <div class='intro_langue'>
         <h3 class='active'>EN</h3>
@@ -421,6 +421,7 @@ import '../styles/global.css'
   .col_yellow:hover::after,
   .col_purple:hover::after {
     opacity: 0;
+    transition: opacity 0.2s cubic-bezier(0.19, 1, 0.22, 1);
   }
   .col_red video {
     position: absolute;
