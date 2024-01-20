@@ -10,8 +10,8 @@ roles:
   - Role 2
   - Role 3
 annee:
-  debut: 124
-  fin: 1234
+  debut: '124'
+  fin: '1234'
 subject: Sujet de la nature
 summary: lorea^doap ead aemdla, poda,npo dmazd lad ,apo ,almd al
 # Composant paragraphe, si je mets ces données ça apparait dans le layout

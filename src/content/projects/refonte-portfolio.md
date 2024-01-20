@@ -10,14 +10,14 @@ roles:
   - Role 2
   - Role 3
 annee:
-  debut: 124
-  fin: 1234
+  debut: '124'
+  fin: '1234'
 subject: Sujet de la nature
 summary: lorea^doap ead aemdla, poda,npo dmazd lad ,apo ,almd al
 # Composant paragraphe, si je mets ces données ça apparait dans le layout
-image:
-  src: /image-article/crypt2.webp
-  alt: image d'une crypte
+images:
+  - src: /image-article/knight-lost-tale/crypt2.webp
+    alt: image d'une crypte
 
 sectionTitle:
   title: Titre de section

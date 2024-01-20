@@ -8,18 +8,20 @@ export const projectSchema = z.object({
   client: z.string(),
   roles: z.array(z.string()),
   annee: z.object({
-    debut: z.number(),
-    fin: z.number(),
+    debut: z.string(),
+    fin: z.string(),
   }),
   subject: z.string(),
   summary: z.string(),
 
-  image: z
-    .object({
-      src: z.string(),
-      alt: z.string(),
-      caption: z.string().optional(),
-    })
+  images: z
+    .array(
+      z.object({
+        src: z.string(),
+        alt: z.string(),
+        caption: z.string().optional(),
+      }),
+    )
     .optional(),
 
   sectionTitle: z

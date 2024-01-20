@@ -1,40 +1,34 @@
 ---
-title: THE MEDIA
-title2: GARDEN
-imageCouverture: '/MuseAic.webp'
-client: GOPOS
+title: A KNIGHT'S
+title2: LOST TALE
+imageCouverture: '/image-article/knight-lost-tale/garnison4.webp'
+client: Personal Project
 slug: 'knight-lost-tale'
 date_parution: 2023-11-01
 roles:
-  - Role 1
-  - Role 2
-  - Role 3
-  - Role 4
-annee: { debut: 134, fin: 1234 }
-subject: 'POS design & website concept'
-summary: 'GoPOS is a company offering POS software along with equipment for gastronomy, service outlets and amusement parks. My role was to design brand identity, logo , visuals and all UI/UX for landingpage and POS. '
-textblock:
-  title:
-    highlightTitle: Accelarated speed,
-    secondPartTitle: on the market
-  summary:
-    While choosing to upgrade the game to a Stadia-supported UE4 version was
-    a great way to minimize the risk of delaying the product, we still
-    needed to act wisely to speed up our development process.
-  paragraph:
-    - 'We properly organized our Gitlab repository so developers could commit code to a test branch first and push it to the main branch only after it successfully passes the review. We also created a wiki to share information with our team and make new people quickly jump into the project. We worked efficiently during development as well. For example, Dontnod implemented a custom engine to achieve cinema-quality 3D animation. Given that the conventional way of porting this functionality to a new platform would not allow us to achieve the desired acceleration in delivery, we optimized our pipeline to decrease the amount of work needed to move the animation to the new platforms.'
-    - 'We properly organized our Gitlab repository so developers could commit code to a test branch first and push it to the main branch only after it successfully passes the review. We also created a wiki to share information with our team and make new people quickly jump into the project. We worked efficiently during development as well. For example, Dontnod implemented a custom engine to achieve cinema-quality 3D animation. Given that the conventional way of porting this functionality to a new platform would not allow us to achieve the desired acceleration in delivery, we optimized our pipeline to decrease the amount of work needed to move the animation to the new platforms.'
+  - Level Designer
+  - Blueprint dev
+  - Lighting artist
+annee: { debut: 'Oct.2023', fin: 'Nov.2023' }
+subject: 'Level design for a game'
+summary: "In 'A Knight's Lost Tale,' players face the challenge of escaping a dungeon filled with obstacles and enemies. My role was to create a compelling atmosphere that brings this adventure to life within the game level."
 
-procons:
-  - title: Results
-    image: /plus_icon.png
-    list:
-      - Adapted Life Is Strange 2 for Nintendo Switch and Stadia
-      - Ensured stable framerate
-      - Upgraded the project to Unreal Engine 4.26 to allow Stadia support
-      - Accelerated time to market by effectively managing project risks and organizing a proper work process
+# Partie article
 
-  - title: Solutions
-    image: /check_icon.png
-    paragraph: 'We properly organized our Gitlab repository so developers could commit code to a test branch first and push it to the main branch only after it successfully passes the review. We also created a wiki to share information with our team and make new people quickly jump into the project. We worked efficiently during development as well. For example, Dontnod implemented a custom engine to achieve cinema-quality 3D animation. Given that the conventional way of porting this functionality to a new platform would not allow us to achieve the desired acceleration in delivery, we optimized our pipeline to decrease the amount of work needed to move the animation to the new platforms.'
+images:
+  - src: /image-article/knight-lost-tale/couloir_prison2.webp
+    alt: image d'une crypte
+
+  - src: /image-article/knight-lost-tale/acces_garnison.webp
+    alt: image d'une crypte
+  - src: /image-article/knight-lost-tale/garnison3.webp
+    alt: image d'une crypte
+  - src: /image-article/knight-lost-tale/garnison4.webp
+    alt: image d'une crypte
+  - src: /image-article/knight-lost-tale/couloir_acces_crypte2.webp
+    alt: image d'une crypte
+  - src: /image-article/knight-lost-tale/crypt2.webp
+    alt: image d'une crypte
+  - src: /image-article/knight-lost-tale/crypt3.webp
+    alt: image d'une crypte
 ---
