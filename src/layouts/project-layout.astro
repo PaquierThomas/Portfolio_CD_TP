@@ -12,6 +12,20 @@ const props = Astro.props
 ---
 
 <main class='main'>
+  <div class='nav'>
+    <div class='nav-content'>
+      <div class='top-left'>
+        <a href='/'>
+          <h3>THOMAS</h3>
+          <h3>PAQUIER</h3>
+        </a>
+      </div>
+      <div class='top-right'>
+        <a href='#'>Drawing</a>
+        <a href='/contact'>Contact</a>
+      </div>
+    </div>
+  </div>
   <section class='article'>
     <div class='wrapper-titre'>
       <div class='titles'>
@@ -79,6 +93,56 @@ const props = Astro.props
     max-width: 100%;
     margin: 0 auto;
     padding: 100px 110px;
+  }
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    padding: 120px 160px;
+
+    background-color: transparent;
+    z-index: 100;
+  }
+
+  .nav-content {
+    position: relative;
+    height: 80%;
+    width: 90%;
+    color: var(--text-color);
+    font-family: aktiv-grotesk, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    a {
+      text-decoration: none;
+      color: var(--text-color);
+    }
+  }
+  .nav-content div:first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    a > h3 {
+      font-size: 14px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      letter-spacing: 5px;
+      z-index: 100;
+    }
+  }
+  .nav-content div:nth-child(2) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    letter-spacing: 1.4px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-end;
   }
   .section_content {
     display: flex;
@@ -270,5 +334,11 @@ const props = Astro.props
     align-self: flex-start;
 
     flex: 1;
+  }
+
+  @media only screen and (max-width: 1599px) {
+    .nav {
+      padding: 80px 80px;
+    }
   }
 </style>
