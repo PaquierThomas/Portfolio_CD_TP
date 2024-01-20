@@ -44,6 +44,7 @@ const next = projects.at(1)!.data
         <a
           href={`/projects/${current.slug}`}
           class='links titles current-titles'
+          draggable='false'
         >
           <h2 class='first'>
             <div>{current.data.title}</div>
@@ -58,6 +59,7 @@ const next = projects.at(1)!.data
           href={`/projects/${current.slug}`}
           aria-label='lien vers le projet actuel'
           class='links image'
+          draggable='false'
         >
           <div class='images'>
             <img
@@ -91,6 +93,15 @@ const next = projects.at(1)!.data
 <style>
   * {
     box-sizing: border-box;
+
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-drag: none;
+    -ms-touch-action: none;
+    draggable: none;
   }
 
   body {

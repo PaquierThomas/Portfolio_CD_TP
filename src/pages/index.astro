@@ -55,44 +55,48 @@ import '../styles/global.css'
       </div>
     </div>
     <div class='grid'>
-      <a href='/projects' class='col_blue'>
+      <a href='/projects' class='col_blue' draggable='false'>
         <img
           src={myFleche}
           alt='une flèche qui pointe vers une autre page'
           class='col_icon'
+          draggable='false'
         />
         <h2 class='col_titre'>Projects</h2>
         <video loop muted>
           <source src={blueVideo} type='video/mp4' />
         </video>
       </a>
-      <a href='#' class='col_red'>
+      <a href='#' class='col_red' draggable='false'>
         <img
           src={myFleche}
           alt='une flèche qui pointe vers une autre page'
           class='col_icon'
+          draggable='false'
         />
         <h2 class='col_titre'>DRAWING</h2>
         <video loop muted>
           <source src={yellowVideo} type='video/mp4' />
         </video>
       </a>
-      <a href='#' class='col_yellow'>
+      <a href='#' class='col_yellow' draggable='false'>
         <img
           src={myFleche}
           alt='une flèche qui pointe vers une autre page'
           class='col_icon'
+          draggable='false'
         />
         <h2 class='col_titre' id='comingsoon'>Coming Soon</h2>
         <video id='videoClip' loop muted>
           <source src={orangeVideo} type='video/mp4' />
         </video>
       </a>
-      <a href='contact' class='col_purple'>
+      <a href='contact' class='col_purple' draggable='false'>
         <img
           src={myFleche}
           alt='une flèche qui pointe vers une autre page'
           class='col_icon'
+          draggable='false'
         />
         <h2 class='col_titre'>Contact</h2>
         <video id='videoClip' loop muted>
@@ -153,6 +157,13 @@ import '../styles/global.css'
 </script>
 
 <style scoped>
+  * {
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
   body {
     margin: 0px;
     padding: 0px;

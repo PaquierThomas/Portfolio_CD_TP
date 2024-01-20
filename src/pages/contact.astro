@@ -23,11 +23,11 @@ import photo_tp from '../../public/photo_tp.jpg'
   <header>
     <div class='wrapper-row'>
       <div class='left-part'>
-        <h2><a href='/#'>Thomas Paquier</a></h2>
+        <h2><a href='/#' draggable='false'>Thomas Paquier</a></h2>
         <hr />
-        <h3><a href='/projects'>Projects</a></h3>
-        <h3><a href='#'>Drawings</a></h3>
-        <h3><a href='#'>Coming Soon</a></h3>
+        <h3><a href='/projects' draggable='false'>Projects</a></h3>
+        <h3><a href='#' draggable='false'>Drawings</a></h3>
+        <h3><a href='#' draggable='false'>Coming Soon</a></h3>
         <h3 class='active'>Contact</h3>
       </div>
       <div class='right-part'>
@@ -45,14 +45,16 @@ import photo_tp from '../../public/photo_tp.jpg'
           <h4 class='section_subtitle'>
             I'm Thomas. France based <span
               class='section_subtitle_span_modeleur'
-              ><a href='https://thomas_paquier.artstation.com/' target='_blank'
-                >3D Artist</a
+              ><a
+                href='https://thomas_paquier.artstation.com/'
+                target='_blank'
+                draggable='false'>3D Artist</a
               ></span
             >
             & <span class='section_subtitle_span_web'
-              ><a href='/projects'>WebDevelopper</a></span
+              ><a href='/projects' draggable='false'>WebDevelopper</a></span
             > / <span class='section_subtitle_span_web'
-              ><a href='/drawing'>Novice illustrator</a></span
+              ><a href='/drawing' draggable='false'>Novice illustrator</a></span
             >
           </h4>
           <p>
@@ -76,43 +78,71 @@ import photo_tp from '../../public/photo_tp.jpg'
             href='thomas.paquier.pro@gmail.com'
             target='_blank'
             class='section_socials_elements'
+            draggable='false'
           >
             <p>GET IN TOUCH</p>
-            <img src={MyFleche} alt='une fleche de redirection' />
+            <img
+              src={MyFleche}
+              alt='une fleche de redirection'
+              draggable='false'
+            />
           </a>
           <a
             href='https://www.linkedin.com/in/thomas-paquier-663b16223/'
             target='_blank'
             class='section_socials_elements'
+            draggable='false'
           >
             <p>LINKEDIN</p>
-            <img src={MyFleche} alt='une fleche de redirection' />
+            <img
+              src={MyFleche}
+              alt='une fleche de redirection'
+              draggable='false'
+            />
           </a>
           <a
             href='https://thomas_paquier.artstation.com/'
             target='_blank'
             class='section_socials_elements'
+            draggable='false'
           >
             <p>ARTSTATION</p>
-            <img src={MyFleche} alt='une fleche de redirection' />
+            <img
+              src={MyFleche}
+              alt='une fleche de redirection'
+              draggable='false'
+            />
           </a>
           <a
             href='https://www.instagram.com/thomas_paquier/'
+            target='_blank'
             class='section_socials_elements'
+            draggable='false'
           >
             <p>INSTAGRAM</p>
-            <img src={MyFleche} alt='une fleche de redirection' />
+            <img
+              src={MyFleche}
+              alt='une fleche de redirection'
+              draggable='false'
+            />
           </a>
         </div>
       </div>
       <div class='second-half'>
-        <img src={photo_tp} alt='Image de thomas paquier' />
+        <img src={photo_tp} alt='Image de thomas paquier' draggable='false' />
       </div>
     </div>
   </section>
 </body>
 
 <style scoped>
+  * {
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
   body {
     background: black;
     font-family: var(--article-second-font-family);
@@ -237,6 +267,11 @@ import photo_tp from '../../public/photo_tp.jpg'
 
     /* margin-top: 50px; grand écran */
     margin-top: 150px;
+
+    a:hover {
+      font-weight: 600;
+      font-size: 13px;
+    }
   }
   .section_socials img {
     height: 3rem;

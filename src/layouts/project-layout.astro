@@ -12,7 +12,7 @@ const props = Astro.props
 ---
 
 <main class='main'>
-  <div class='nav'>
+  <!-- <div class='nav'>
     <div class='nav-content'>
       <div class='top-left'>
         <a href='/'>
@@ -25,7 +25,7 @@ const props = Astro.props
         <a href='/contact'>Contact</a>
       </div>
     </div>
-  </div>
+  </div> -->
   <section class='article'>
     <div class='wrapper-titre'>
       <div class='titles'>
@@ -147,14 +147,15 @@ const props = Astro.props
   .section_content {
     display: flex;
     flex-direction: column;
+    max-width: 960px;
+    margin: 0 auto;
     gap: 60px;
   }
   .article {
-    background-color: red;
     background-image: var(--projectImage);
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 99vh;
     display: flex;
     justify-content: center;
@@ -194,7 +195,7 @@ const props = Astro.props
     font-family: aktiv-grotesk-extended, sans-serif;
     font-weight: 800;
     font-size: 5vw;
-    color: rgb(232, 230, 227);
+    color: var(--text-color);
     font-style: normal;
     letter-spacing: 0;
     position: absolute;
@@ -208,7 +209,6 @@ const props = Astro.props
   /* About de l'article la où toutes les infos sont mises (client, année, role, etc) */
   .paragraph-left {
     margin-bottom: 0px;
-    padding-right: 100px;
     padding-bottom: 2px;
     align-self: stretch;
     flex: 1;
@@ -247,19 +247,12 @@ const props = Astro.props
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    width: 400px;
-    margin-right: auto;
-    margin-left: auto;
+    /* width: 300px; */
     padding-top: 10px;
-    padding-bottom: 0px;
-
     flex-direction: column;
-
-    justify-content: center;
-
+    justify-content: flex-end;
     align-items: center;
-
-    align-self: flex-start;
+    align-self: flex-end;
   }
 
   .text-right {
@@ -267,12 +260,6 @@ const props = Astro.props
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    width: 600px;
-    max-width: 800px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-top: 0px;
-    padding-bottom: 0px;
 
     flex-direction: column;
 
@@ -285,19 +272,19 @@ const props = Astro.props
 
   .about-project {
     position: relative;
-    z-index: 0;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+    margin: 0 auto;
+    z-index: 0;
     height: auto;
     max-width: 1000px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-top: 160px;
-    padding-bottom: 100px;
+    margin-top: 80px;
+    margin-bottom: 100px;
+    padding-left: 100px;
 
-    justify-content: center;
+    /* justify-content: center; */
     text-align: left;
   }
   .h3-title {
@@ -329,7 +316,6 @@ const props = Astro.props
   .h2-subheading.cd.small {
     max-width: none;
     padding-top: 10px;
-    padding-right: 30px;
     font-weight: 100;
     align-self: flex-start;
 

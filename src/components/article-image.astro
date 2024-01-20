@@ -16,10 +16,10 @@ const { src, alt } = Astro.props
 
       const handleMouseEnter = function () {
         if (!isInFullScreen) {
-          img.style.outline = '2px solid blue'
+          img.style.outline = '2px solid var(--text-color)'
           img.style.transition = 'transform 0.3s ease'
           img.style.cursor = 'pointer'
-          img.style.transform = 'scale(1.02)'
+          img.style.transform = 'scale(1.03)'
         }
       }
 
@@ -79,4 +79,4 @@ const { src, alt } = Astro.props
   })
 </script>
 
-<img data-enlargable src={src} alt={alt} />
+<img data-enlargable src={src} alt={alt} draggable='false' />
