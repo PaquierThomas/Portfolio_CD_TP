@@ -14,7 +14,7 @@ import '../styles/global.css'
   <div class='container'>
     <div class='intro'>
       <div class='intro_icon'>
-        <a href='/'>
+        <a href='/' draggable='false'>
           <h2>THOMAS</h2>
           <h2>PAQUIER</h2>
         </a>
@@ -196,8 +196,8 @@ import '../styles/global.css'
   .intro_icon {
     position: absolute;
     font-weight: 900;
-    top: 30px;
-    left: 30px;
+    top: 70px;
+    left: 70px;
     font-family: var(--primary-font-family);
     color: var(--text-color);
     a > h2 {
@@ -215,8 +215,8 @@ import '../styles/global.css'
     gap: 20px;
     position: absolute;
     font-weight: 900;
-    bottom: 20px;
-    left: 30px;
+    bottom: 40px;
+    left: 50px;
     font-family: var(--primary-font-family);
     font-size: 28px;
     color: var(--text-color);
@@ -247,8 +247,8 @@ import '../styles/global.css'
     display: flex;
     flex-direction: column;
     position: absolute;
-    padding-left: 100px;
-    top: 25%;
+    padding-left: 150px;
+    top: 18%;
 
     gap: 20px;
   }
@@ -258,7 +258,8 @@ import '../styles/global.css'
     line-height: 1;
     padding-right: 00px;
     font-weight: 800;
-    font-size: clamp(1rem, 20vw, 6rem);
+    font-size: clamp(1rem, 20vw, 10rem);
+
     color: var(--text-color);
   }
   .intro_description {
@@ -486,9 +487,14 @@ import '../styles/global.css'
   @media only screen and (max-width: 1599px) {
     .intro_hero {
       top: 18%;
+      padding-left: 100px;
     }
     .intro_icon {
       left: 40px;
+    }
+    .intro_langue {
+      bottom: 20px;
+      left: 30px;
     }
   }
 </style>
