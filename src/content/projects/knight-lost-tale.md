@@ -14,7 +14,8 @@ subject: 'Level design for a game'
 summary: "In 'A Knight's Lost Tale,' players face the challenge of escaping a dungeon filled with obstacles and enemies. My role was to create a compelling atmosphere that brings this adventure to life within the game level."
 
 # Partie article
-
+videos:
+  - src: /image-article/alchemy-series/battery_anim.mp4
 images:
   - src: /image-article/knight-lost-tale/couloir_prison2.webp
     alt: image d'une crypte

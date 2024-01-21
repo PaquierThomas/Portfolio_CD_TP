@@ -1,0 +1,26 @@
+---
+import '../styles/global.css'
+import type { Project } from '../content/config'
+
+type Props = {
+  videos: Project['videos']
+}
+
+const { src, caption } = Astro.props
+---
+
+<video controls autoplay loop muted>
+  <source src={src} type='video/mp4' />
+</video>
+<p class='legend'>{caption}</p>
+
+<style scoped>
+  .legend {
+    display: flex;
+    justify-content: center;
+    color: var(--legende-color);
+    margin-top: -50px;
+    font-size: 16px;
+    text-transform: capitalize;
+  }
+</style>

@@ -5,6 +5,7 @@ import ArticleTextBlock from '../components/article-text-block.astro'
 import ArticleProsCons from '../components/article-pros-cons.astro'
 import ArticleSectionTitle from '../components/article-section-title.astro'
 import ArticleImage from '../components/article-image.astro'
+import ArticleVideo from '../components/article-video.astro'
 
 type Props = Project & {}
 
@@ -69,6 +70,12 @@ const props = Astro.props
         props.images &&
           props.images.map((image, index) => (
             <ArticleImage key={index} {...image} />
+          ))
+      }
+      {
+        props.videos &&
+          props.videos.map((video, index) => (
+            <ArticleVideo key={index} {...video} />
           ))
       }
       <!-- {props.image && <ArticleImage {...props.image} />} -->

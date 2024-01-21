@@ -24,6 +24,15 @@ export const projectSchema = z.object({
     )
     .optional(),
 
+  videos: z
+    .array(
+      z.object({
+        src: z.string(),
+        caption: z.string().optional(),
+      }),
+    )
+    .optional(),
+
   sectionTitle: z
     .object({
       title: z.string(),
