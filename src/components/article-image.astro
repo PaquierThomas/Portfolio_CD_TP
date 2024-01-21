@@ -5,7 +5,7 @@ import type { Project } from '../content/config'
 type Props = {
   images: Project['images']
 }
-const { src, alt } = Astro.props
+const { src, alt, caption } = Astro.props
 ---
 
 <script>
@@ -80,3 +80,15 @@ const { src, alt } = Astro.props
 </script>
 
 <img data-enlargable src={src} alt={alt} draggable='false' />
+<p class='legend'>{caption}</p>
+
+<style scoped>
+  .legend {
+    display: flex;
+    justify-content: center;
+    color: var(--legende-color);
+    margin-top: -50px;
+    font-size: 16px;
+    text-transform: capitalize;
+  }
+</style>

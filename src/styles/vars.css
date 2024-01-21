@@ -4,8 +4,9 @@
   --primary-color: #f48e28;
   --secondary-color: #f5ddc4;
   --bg-color: rgb(20, 31, 42);
-  --bg-article: #181a1b;
+  --bg-article: rgb(24, 26, 27);
   --text-color: rgb(232, 230, 227);
+  --legende-color: rgba(213, 213, 213, 0.8);
 
   --tiny-font-size: 10px;
   --small-font-size: 14px;
