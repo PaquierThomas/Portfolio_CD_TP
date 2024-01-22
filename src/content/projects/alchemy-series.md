@@ -24,10 +24,8 @@ videos:
 
 images:
   - src: /image-article/alchemy-series/BatteryAlchemy2.webp
-    alt: image of an alchemy tank
     caption: 'Alchemy tank n°2'
 
   - src: /image-article/alchemy-series/BatteryAlchemy3.webp
-    alt: image of a bigger alchemy tank
     caption: 'Alchemy tank N°3'
 ---

@@ -16,29 +16,29 @@ summary: "In 'A Knight's Lost Tale,' players face the challenge of escaping a du
 # Partie article
 videos:
   - src: /image-article/alchemy-series/battery_anim.mp4
+
 images:
   - src: /image-article/knight-lost-tale/couloir_prison2.webp
-    alt: image d'une crypte
     caption: 'Jail corridor'
 
   - src: /image-article/knight-lost-tale/acces_garnison.webp
-    alt: image d'une crypte
+
     caption: 'access aisle to lower sections'
 
   - src: /image-article/knight-lost-tale/garnison3.webp
-    alt: image d'une crypte
+
     caption: "Guard's rest place"
 
   - src: /image-article/knight-lost-tale/garnison4.webp
-    alt: image d'une crypte
+
     caption: "Guard's rest place"
   - src: /image-article/knight-lost-tale/couloir_acces_crypte2.webp
-    alt: image d'une crypte
+
     caption: 'Crypt corridor'
   - src: /image-article/knight-lost-tale/crypt2.webp
-    alt: image d'une crypte
+
     caption: 'Crypt overview'
   - src: /image-article/knight-lost-tale/crypt3.webp
-    alt: image d'une crypte
+
     caption: 'Crypt front view'
 ---
