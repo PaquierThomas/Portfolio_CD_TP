@@ -61,7 +61,7 @@ const { Content, ...props } = Astro.props
         </ul>
       </div>
       <div class='text-right'>
-        <div class='h3-title'>{props.subject}</div><p
+        <h1 class='h3-title'>{props.subject}</h1><p
           class='h2-subheading cd small'
         >
           {props.summary}
@@ -86,11 +86,10 @@ const { Content, ...props } = Astro.props
         <!-- {props.image && <ArticleImage {...props.image} />} -->
         {props.textblock && <ArticleTextBlock {...props.textblock} />}
         {props.procons && <ArticleProsCons procons={props.procons} />}
-        {props.children}
+        <slot/>
       </div>
     </section>
 
-    <slot />
   </main>
 
   <style define:vars={{ projectImage: `url(${props.imageCouverture})` }}>
