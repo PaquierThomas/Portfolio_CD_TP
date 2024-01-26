@@ -1,0 +1,44 @@
+---
+import '../styles/global.css'
+import myPlus from '/plus_icon.png'
+import myCheck from '/check_icon.png'
+import { mergeProps } from 'vue'
+import type { Project } from '../content/config'
+
+type Props = Project['short-textblock'] & {}
+
+const { title, summary, } = Astro.props
+---
+
+<div class='section_content'>
+  <h2 class='section_title'>
+    <span>{title.highlightTitle}</span>
+    {title.secondPartTitle}
+  </h2>
+  <p class='section_summary'>
+    {summary}
+  </p>
+  
+</div>
+
+<style scoped>
+  .section_title {
+    font-size: 45px;
+    font-weight: bold;
+    line-height: 60px;
+  }
+  .section_title span {
+    color: var(--primary-color);
+  }
+
+  .section_content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .section_summary {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 40px;
+  }
+</style>

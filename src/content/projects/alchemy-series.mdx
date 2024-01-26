@@ -31,6 +31,7 @@ procons:
 import ArticleImage from '../../components/article-image.astro'
 import ArticleSectionTitle from '../../components/article-section-title.astro'
 import ArticleVideo from '../../components/article-video.astro'
+import ArticleShortTextBlock from '../../components/article-short-text-block.astro'
 
 <ArticleSectionTitle
   title='First inspiration'
@@ -41,9 +42,12 @@ import ArticleVideo from '../../components/article-video.astro'
   caption='battery animation'
 />
 
-<ArticleSectionTitle
-  title=' '
-  shortDescription='I quickly became drawn to alchemy as my subject, which led me to embark on this next project.'
+<ArticleShortTextBlock
+  title={{
+    highlightTitle: 'Alchemy ',
+    secondPartTitle: 'as a primary subject ',
+  }}
+  summary='I quickly became drawn to alchemy as my subject, i really liked the colors and glowing effects the theme of alchemy has, so i decided to dive further in this subject while combining it with the first inspiration, which led me to embark on this next project.'
 />
 
 <ArticleVideo
@@ -51,9 +55,12 @@ import ArticleVideo from '../../components/article-video.astro'
   caption='Alchemy tank n°1 animation'
 />
 
-<ArticleSectionTitle
-  title='Diving deep into the subject'
-  shortDescription='The two projects below presented the most significant challenges, pushing both me and my computer to the limit. I had to master the art of optimizing scenes and renders to overcome these hurdles. Despite my preparations, my computer ultimately struggled to handle the animations.'
+<ArticleShortTextBlock
+  title={{
+    highlightTitle: 'Diving deep ',
+    secondPartTitle: 'into the subject',
+  }}
+  summary='The two projects below presented the most significant challenges, pushing both me and my computer to the limit. I had to master the art of optimizing scenes and renders to overcome these hurdles. Despite my preparations, my computer ultimately struggled to handle the animations.'
 />
 
 <ArticleImage

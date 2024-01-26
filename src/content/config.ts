@@ -31,7 +31,17 @@ export const section_schema = z.object({
         secondPartTitle: z.string(),
       }),
       summary: z.string(),
-      paragraph: z.array(z.string()),
+      paragraph: z.array(z.string()).optional(),
+    })
+    .optional(),
+
+  'short-textblock': z
+    .object({
+      title: z.object({
+        highlightTitle: z.string(),
+        secondPartTitle: z.string(),
+      }),
+      summary: z.string(),
     })
     .optional(),
 })
@@ -95,7 +105,17 @@ export const projectSchema = z.object({
         secondPartTitle: z.string(),
       }),
       summary: z.string(),
-      paragraph: z.array(z.string()),
+      paragraph: z.array(z.string()).optional(),
+    })
+    .optional(),
+
+  'short-textblock': z
+    .object({
+      title: z.object({
+        highlightTitle: z.string(),
+        secondPartTitle: z.string(),
+      }),
+      summary: z.string(),
     })
     .optional(),
 })
