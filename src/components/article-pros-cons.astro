@@ -12,9 +12,9 @@ const props = Astro.props
 ---
 
 <div>
-  <!-- Styliser le container  -->
-  {
-    props.procons.map((procon: any) => (
+  {/* Styliser le container  */}
+  {props.procons.map((procon: any, index: number) => (
+    <div>
       <div class='section_row'>
         <div class='section_row_title'>
           <h3>{procon.title}</h3>
@@ -28,8 +28,9 @@ const props = Astro.props
           <slot />
         </div>
       </div>
-    ))
-  }
+      {index !== props.procons.length - 1 && <hr/>} {/* Render hr except for the last item */}
+    </div>
+  ))}
 </div>
 
 <style scoped>
@@ -41,6 +42,7 @@ const props = Astro.props
     display: flex;
     flex-direction: row;
     gap: 50px;
+    margin: 30px 0;
   }
   .section_row_title {
     display: flex;
@@ -60,7 +62,7 @@ const props = Astro.props
   }
 
   .section_row_list {
-    font-size: 30px;
+    font-size: 19px;
     line-height: 40px;
     padding-top: 10px;
     list-style: unset;
@@ -68,11 +70,12 @@ const props = Astro.props
   .section_row_description {
     padding-left: 10px;
     padding-top: 5px;
-    font-size: 30px;
+    font-size: 19px;
     line-height: 40px;
   }
 
   hr.solid {
     border-top: 1px #383d40;
+    
   }
 </style>

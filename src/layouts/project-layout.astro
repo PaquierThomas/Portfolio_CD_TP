@@ -70,6 +70,7 @@ const { Content, ...props } = Astro.props
     </section>
     <section class='container'>
       <div class='section_content'>
+        <slot/>
         {props.sectionTitle && <ArticleSectionTitle {...props.sectionTitle} />}
         {
           props.videos &&
@@ -86,7 +87,6 @@ const { Content, ...props } = Astro.props
         <!-- {props.image && <ArticleImage {...props.image} />} -->
         {props.textblock && <ArticleTextBlock {...props.textblock} />}
         {props.procons && <ArticleProsCons procons={props.procons} />}
-        <slot/>
       </div>
     </section>
 
@@ -292,7 +292,7 @@ const { Content, ...props } = Astro.props
       display: -ms-flexbox;
       display: flex;
 
-      max-width: 800px;
+      max-width: 700px;
 
       flex-direction: column;
 
@@ -336,7 +336,7 @@ const { Content, ...props } = Astro.props
     }
 
     .h2-subheading.cd {
-      max-width: 800px;
+      max-width: 700px;
       padding-top: 0px;
       padding-right: 60px;
       padding-left: 0px;
@@ -347,17 +347,23 @@ const { Content, ...props } = Astro.props
     }
 
     .h2-subheading.cd.small {
-      max-width: 600px;
+      max-width: 700px;
       padding-top: 10px;
       font-weight: 100;
       align-self: flex-start;
 
       flex: 1;
     }
+    .section_content h2{
+      font-size: 32px;
+    }
 
     @media only screen and (max-width: 1599px) {
       .nav {
         padding: 80px 80px;
+      }
+      .section_content{
+        max-width: 900px;
       }
     }
   </style>
