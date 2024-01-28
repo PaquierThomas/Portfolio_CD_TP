@@ -27,9 +27,14 @@ const { Content, ...props } = Astro.props
           </a>
         </div>
         <div class='top-right'>
+          
           <a href='#'>Drawing</a>
           <a href='/contact'>Contact</a>
         </div>
+        <div><a href="/projects">
+          <h3>Go Back</h3>
+        </a></div>
+
       </div>
     </div>
     <section class='article'>
@@ -173,6 +178,16 @@ const { Content, ...props } = Astro.props
       flex-direction: column;
       gap: 10px;
       justify-content: flex-end;
+    }
+
+    .nav-content div:nth-child(3){
+  
+        position: absolute;
+        bottom: -30px;
+        left: 0;
+       font-size: 20px;
+      letter-spacing: 1.4px;
+      /* text-transform: none; */
     }
     .section_content {
       display: flex;
