@@ -3,9 +3,10 @@
 :root {
   --primary-color: #b2ffa9;
   --secondary-color: #f5ddc4;
+  --layer-color: #0fa3b1;
   --bg-color: rgb(20, 31, 42);
   --bg-article: rgb(24, 26, 27);
-  --text-color: rgb(232, 230, 227);
+  --text-color: #e8e6e3;
   --legende-color: rgba(213, 213, 213, 0.8);
 
   --tiny-font-size: 10px;
