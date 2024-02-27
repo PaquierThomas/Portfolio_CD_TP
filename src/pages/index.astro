@@ -21,7 +21,7 @@ import '../styles/global.css'
       </div>
 
       <div class='intro_hero'>
-        <h2 class='intro_titre'>ONE PERSON, THREE CREATIVE SPHERES</h2>
+        <h2 class='intro_titre'><span class="layer">ONE</span> PERSON, <span class="layer">THREE</span> CREATIVE SPHERES</h2>
       </div>
       <div class='intro_langue'>
         <h3 class='active'>EN</h3>
@@ -83,11 +83,12 @@ import '../styles/global.css'
 
 <script>
   const grid = document.querySelector('.grid') as HTMLElement
-  const items = document.querySelectorAll('.grid > a')
+  const items = document.querySelectorAll('.grid > a') 
 
   items.forEach((item, index) => {
     const video = item.querySelector('video')
     const myFleche = item.querySelector('img') // Sélection de myFleche
+    const text = item.querySelector('h2')
 
     item.addEventListener('mouseenter', () => {
       const values = Array(items.length).fill('1fr')
@@ -105,6 +106,9 @@ import '../styles/global.css'
 
       myFleche.style.opacity = '1'
       myFleche.style.transform = 'translate(10%, -10%)'
+      myFleche.style.color = 'rgba(255, 255, 255, 1)'
+
+      text.style.color = 'rgba(255, 255, 255, 1)'
     })
 
     item.addEventListener('mouseleave', () => {
@@ -114,6 +118,9 @@ import '../styles/global.css'
 
       myFleche.style.opacity = '0'
       myFleche.style.transform = 'translate(-10%, 10%)'
+      myFleche.style.color = 'rgba(255, 255, 255, 0.6)'
+
+      text.style.color = 'rgba(255, 255, 255, 0.6)'
     })
   })
 
@@ -230,12 +237,17 @@ import '../styles/global.css'
     /* font-size: var(--giant-font-size); */
     font-family: var(--primary-font-family);
     line-height: 1;
-    padding-right: 00px;
+    padding-right: 0px;
     font-weight: 800;
     font-size: clamp(1rem, 20vw, 10rem);
 
     color: var(--text-color);
+    
+    span.layer{
+      color: rgba(var(--layer-color),1);
+    }
   }
+  
   .intro_description {
     margin-top: 30px;
     font-size: 18px;
@@ -342,7 +354,8 @@ import '../styles/global.css'
     transform-origin: center left;
     font-weight: 700;
     text-transform: uppercase;
-    color: white;
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 0.3s ease-in;
   }
   .col_blue {
     position: relative;
@@ -465,6 +478,7 @@ import '../styles/global.css'
     }
     .intro_titre {
       font-size: clamp(1rem, 20vw, 6rem);
+      margin-top: 10px;
     }
     .intro_icon {
       left: 40px;

@@ -3,7 +3,7 @@
 :root {
   --primary-color: #b2ffa9;
   --secondary-color: #f5ddc4;
-  --layer-color: #0fa3b1;
+  --layer-color: 104, 243, 220;
   --bg-color: rgb(20, 31, 42);
   --bg-article: rgb(24, 26, 27);
   --text-color: #e8e6e3;
