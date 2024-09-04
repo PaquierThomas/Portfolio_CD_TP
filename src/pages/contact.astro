@@ -8,21 +8,41 @@ import '../styles/global.css'
 >
   <div class='wrapper'>
     <div class='photo'></div>
-    <div class='text'>
-      <div class='left'>
-        <div class='introduction'>
-          <h1>Hello!</h1>
+    <div class='content'>
+      <div class='text'>
+        <div class='left'>
+          <div class='introduction'>
+            <h1>Hello!</h1>
+            <p>
+              My name is Thao Hoa (Bong). My strengths are Visual Development,
+              Illustration and Concept art. I love creating and storytelling. I
+              look forward to contributing my creativity and skills to
+              innovative projects. Hope you enjoy my portfolio!
+            </p>
+          </div>
+          <div class='education'>
+            <h2>education</h2>
+            <div class='about-card'>
+              <h3>2020 - 2024: Ho Chi Minh University of Fine Art</h3>
+              <p>Graduated with a major in Multimedia Design</p>
+            </div>
+          </div>
         </div>
-        <div class='education'>
-          <h2>education</h2>
-        </div>
-      </div>
-      <div class='right'>
-        <div class='skills'>
-          <h2>skills</h2>
-        </div>
-        <div class='experience'>
-          <h2>experience</h2>
+        <div class='right'>
+          <div class='skills'>
+            <h2>skills</h2>
+          </div>
+          <div class='experience'>
+            <h2>experience</h2>
+            <div class='about-card'>
+              <h3>2020 - 2023</h3>
+              <p>Illustration at Huta Chan Studio</p>
+            </div>
+            <div class='about-card'>
+              <h3>2022 - Present</h3>
+              <p>Freelance Illustration Artist</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -30,15 +50,6 @@ import '../styles/global.css'
 </BaseLayout>
 
 <style scoped>
-  .wrapper {
-    display: flex;
-    flex-direction: row;
-  }
-  .text {
-    display: flex;
-    flex-direction: column;
-  }
-
   html,
   body {
     height: 100%; /* Ensure html and body take up the full height */
@@ -54,14 +65,54 @@ import '../styles/global.css'
     background-position: center; /* Centers the image */
     font-family: 'Gilroy', sans-serif;
     background-color: var(--v2-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 80%;
+    padding-inline: 175px;
+  }
+
+  .photo {
+    background-color: red;
+    width: 31.5%;
+    height: 100%;
+    border-radius: 80px;
+    margin-top: 15px;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space out the content vertically */
+    padding-left: 20px; /* Optional: Adds space between photo and content */
+    width: 50%;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   h1 {
     font-family: 'Gilroy', sans-serif;
     font-weight: 900; /* Ensure it uses the Black weight */
-    color: var(--v2-secondary);
+    /* color: var(--v2-secondary); */
+    color: red;
     font-size: 200px;
     margin: 0;
-    text-align: center; /* Center the text horizontally */
+  }
+
+  p {
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 400;
   }
 </style>
