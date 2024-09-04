@@ -283,3 +283,11 @@
 .tk-aktiv-grotesk-thin {
   font-family: 'aktiv-grotesk-thin', sans-serif;
 }
+
+/* Font grotest V2 site web */
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/public/fonts/Gilroy-Black.ttf') format('truetype');
+  font-weight: 900; /* Black is usually the heaviest weight */
+  font-style: normal;
+}
