@@ -1,44 +1,67 @@
 ---
 import BaseLayout from '../layouts/base-layout.astro'
 import '../styles/global.css'
-
 ---
-
 
 <BaseLayout
   description='Étudiant passionné par la 3D, je suis basé à Besançon où je crée des univers uniques grâce à mes compétences en modélisation et animation.'
 >
-    <h1>Hello!</h1>
+  <div class='wrapper'>
+    <div class='photo'></div>
+    <div class='text'>
+      <div class='left'>
+        <div class='introduction'>
+          <h1>Hello!</h1>
+        </div>
+        <div class='education'>
+          <h2>education</h2>
+        </div>
+      </div>
+      <div class='right'>
+        <div class='skills'>
+          <h2>skills</h2>
+        </div>
+        <div class='experience'>
+          <h2>experience</h2>
+        </div>
+      </div>
+    </div>
+  </div>
 </BaseLayout>
 
-
 <style scoped>
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+  }
 
+  html,
+  body {
+    height: 100%; /* Ensure html and body take up the full height */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove any default padding */
+    overflow: hidden; /* Prevents scrolling if content overflows */
+  }
 
-html, body {
-    height: 100%;           /* Ensure html and body take up the full height */
-    margin: 0;              /* Remove default margin */
-    padding: 0;             /* Remove any default padding */
-    overflow: hidden;       /* Prevents scrolling if content overflows */
-}
-
-body {
+  body {
     background-image: url('/public/about.png');
-    background-size: cover;       /* Ensures the image covers the entire page */
+    background-size: cover; /* Ensures the image covers the entire page */
     background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-position: center;  /* Centers the image */
+    background-position: center; /* Centers the image */
     font-family: 'Gilroy', sans-serif;
-    background-color: #F0EFEF;
-}
+    background-color: var(--v2-primary);
+  }
 
-h1 {
+  h1 {
     font-family: 'Gilroy', sans-serif;
     font-weight: 900; /* Ensure it uses the Black weight */
-    color: #323641;
-    font-size: 270px;
+    color: var(--v2-secondary);
+    font-size: 200px;
     margin: 0;
     text-align: center; /* Center the text horizontally */
-}
-
-
+  }
 </style>

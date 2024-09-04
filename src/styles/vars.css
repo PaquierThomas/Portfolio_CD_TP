@@ -9,6 +9,10 @@
   --text-color: #e8e6e3;
   --legende-color: rgba(213, 213, 213, 0.8);
 
+  /* V2 site */
+  --v2-primary: #f0efef;
+  --v2-secondary: #323641;
+
   --tiny-font-size: 10px;
   --small-font-size: 14px;
   --regular-font-size: 18px;
