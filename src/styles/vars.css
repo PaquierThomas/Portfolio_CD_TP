@@ -3,7 +3,7 @@
 :root {
   --primary-color: #b2ffa9;
   --secondary-color: #f5ddc4;
-  --layer-color: rgb(104, 243, 220);
+  --layer-color: 46, 83, 90;
   --bg-color: #141f2a;
   --bg-article: rgb(24, 26, 27);
   --text-color: #e8e6e3;
@@ -42,6 +42,7 @@
   --v2-tertiary: #68c8a8;
   --v2-quaternary: #96bbaf;
 
+  --layer-color: 104, 243, 220;
+
   --v2-primary-hover: #ffffff;
-  --layer-color: rgb(104, 243, 220);
 }

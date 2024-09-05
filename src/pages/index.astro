@@ -159,6 +159,7 @@ import '../styles/global.css'
   }
   a:hover {
     color: var(--v2-primary-hover);
+    filter: drop-shadow(0 0 20px var(--v2-primary-hover));
   }
   h2 {
     font-family: var(--bigger-font-size);
@@ -247,7 +248,7 @@ import '../styles/global.css'
     color: var(--v2-secondary);
 
     span.layer {
-      color: var(--layer-color);
+      color: rgba(var(--layer-color), 1);
     }
   }
 

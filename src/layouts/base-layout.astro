@@ -102,6 +102,11 @@ const { description, title } = Astro.props
         transition: transform 0.3s;
       }
 
+      #theme-switch:hover svg {
+        fill: var(--v2-primary-hover);
+        filter: drop-shadow(0 0 20px var(--v2-primary-hover));
+      }
+
       #theme-switch svg:last-child {
         display: none;
       }
