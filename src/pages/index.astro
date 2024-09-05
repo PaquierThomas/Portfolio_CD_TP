@@ -21,12 +21,15 @@ import '../styles/global.css'
       </div>
 
       <div class='intro_hero'>
-        <h2 class='intro_titre'><span class="layer">ONE</span> PERSON, <span class="layer">THREE</span> CREATIVE SPHERES</h2>
+        <h2 class='intro_titre'>
+          <span class='layer'>ONE</span> PERSON, <span class='layer'>THREE</span
+          > CREATIVE SPHERES
+        </h2>
       </div>
-      <div class='intro_langue'>
+      <!-- <div class='intro_langue'>
         <h3 class='active'>EN</h3>
         <h3>FR</h3>
-      </div>
+      </div> -->
     </div>
     <div class='grid'>
       <a href='/projects' class='col_blue' draggable='false'>
@@ -67,7 +70,7 @@ import '../styles/global.css'
       </a>
       <a href='contact' class='col_purple' draggable='false'>
         <img
-          src={myFleche.src}  
+          src={myFleche.src}
           alt='une flèche qui pointe vers une autre page'
           class='col_icon'
           draggable='false'
@@ -83,7 +86,7 @@ import '../styles/global.css'
 
 <script>
   const grid = document.querySelector('.grid') as HTMLElement
-  const items = document.querySelectorAll('.grid > a') 
+  const items = document.querySelectorAll('.grid > a')
 
   items.forEach((item, index) => {
     const video = item.querySelector('video')
@@ -148,14 +151,14 @@ import '../styles/global.css'
   body {
     margin: 0px;
     padding: 0px;
-    background: var(--bg-color);
+    background: var(--v2-primary);
   }
   a {
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--v2-secondary);
   }
   a:hover {
-    color: white;
+    color: var(--v2-primary-hover);
   }
   h2 {
     font-family: var(--bigger-font-size);
@@ -180,7 +183,7 @@ import '../styles/global.css'
     top: 70px;
     left: 70px;
     font-family: var(--primary-font-family);
-    color: var(--text-color);
+    color: var(--v2-secondary);
     a > h2 {
       font-size: 14px;
       text-decoration: none;
@@ -200,7 +203,7 @@ import '../styles/global.css'
     left: 50px;
     font-family: var(--primary-font-family);
     font-size: 28px;
-    color: var(--text-color);
+    color: var(--v2-secondary);
   }
   .intro_langue h3 {
     position: relative;
@@ -209,7 +212,7 @@ import '../styles/global.css'
     content: '';
     display: block;
     position: absolute;
-    border-bottom-color: var(--text-color);
+    border-bottom-color: var(--v2-secondary);
     bottom: -2px;
     left: 0;
     width: 100%;
@@ -241,89 +244,22 @@ import '../styles/global.css'
     font-weight: 800;
     font-size: clamp(1rem, 20vw, 10rem);
 
-    color: var(--text-color);
-    
-    span.layer{
-      color: rgba(var(--layer-color),1);
+    color: var(--v2-secondary);
+
+    span.layer {
+      color: var(--layer-color);
     }
   }
-  
+
   .intro_description {
     margin-top: 30px;
     font-size: 18px;
     font-family: var(--article-font-family);
-    color: var(--text-color);
+    color: var(--v2-secondary);
     line-height: 1.2;
     padding-right: 500px;
   }
-  .button {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    margin-top: 40px;
-    gap: 20px;
-    width: fit-content;
-    height: fit-content;
-    padding: 0;
-    cursor: pointer;
-    border: 4px solid var(--text-color);
-    border-radius: 100px;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 25px;
-    transition: opacity 0.2s;
-    .button-text {
-      cursor: pointer;
-      position: relative;
-      font-family: var(--article-font-family);
 
-      font-weight: 500;
-      font-size: 24px;
-    }
-    svg {
-      display: flex;
-      align-self: center;
-      fill: var(--text-color);
-    }
-    &:hover {
-      color: black;
-      fill: black;
-      svg {
-        fill: black;
-      }
-    }
-  }
-
-  .button::before {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    content: '';
-    background: var(--text-color);
-    transition: transform 0.3s;
-  }
-
-  .button-anim {
-    overflow: hidden;
-  }
-  .button-anim:hover a {
-    color: black;
-  }
-  .button-anim::before {
-    right: auto;
-    bottom: auto;
-    width: 120%;
-    height: 100%;
-    transform-origin: right top;
-    transform: skewX(-30deg) scale(0, 1);
-  }
-  .button-anim:hover::before {
-    transform-origin: left top;
-    transform: skewX(-30deg) scale(1, 1);
-  }
   .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -340,7 +276,9 @@ import '../styles/global.css'
     top: 60px;
     scale: 1.15;
     opacity: 0;
-    transition: opacity 0.4s ease, transform 0.5s ease; /* Animation de transition */
+    transition:
+      opacity 0.4s ease,
+      transform 0.5s ease; /* Animation de transition */
     transform: translate(-35%, 30%); /* Décalage initial */
   }
 

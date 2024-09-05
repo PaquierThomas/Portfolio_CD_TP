@@ -139,7 +139,7 @@ import '../styles/global.css'
     h3 {
       font-family: 'Gilroy', sans-serif;
       font-weight: 900;
-      color: var(--v2-secondary);
+      color: var(--v2-tertiary); /* tertiary in night mode*/
       line-height: 1;
     }
     h2 {
@@ -160,6 +160,7 @@ import '../styles/global.css'
       font-size: 31.5px;
       letter-spacing: 1.2px;
       line-height: 1.5;
+      color: var(--v2-secondary);
     }
 
     .wrapper {
@@ -202,13 +203,13 @@ import '../styles/global.css'
       width: 98%;
       margin-bottom: 95px;
       h1 {
-        color: var(--v2-secondary);
+        color: var(--v2-tertiary);
         font-size: 166px;
         line-height: 1;
         margin-bottom: 72px;
       }
       p:first-of-type {
-        color: var(--v2-secondary);
+        /* color: var(--v2-secondary); */
         margin-bottom: 50px;
       }
     }
@@ -287,6 +288,12 @@ import '../styles/global.css'
         font-weight: 400;
         font-size: 25px;
         margin: 0;
+      }
+    }
+
+    .about-card {
+      h3 {
+        color: var(--v2-quaternary);
       }
     }
   </style>

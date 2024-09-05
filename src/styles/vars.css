@@ -3,15 +3,19 @@
 :root {
   --primary-color: #b2ffa9;
   --secondary-color: #f5ddc4;
-  --layer-color: 104, 243, 220;
-  --bg-color: rgb(20, 31, 42);
+  --layer-color: rgb(104, 243, 220);
+  --bg-color: #141f2a;
   --bg-article: rgb(24, 26, 27);
   --text-color: #e8e6e3;
   --legende-color: rgba(213, 213, 213, 0.8);
 
   /* V2 site */
   --v2-primary: #f0efef;
-  --v2-secondary: #323641;
+  --v2-secondary: #141f2a;
+  --v2-tertiary: #141f2a;
+  --v2-quaternary: #141f2a;
+
+  --v2-primary-hover: #203142;
 
   --tiny-font-size: 10px;
   --small-font-size: 14px;
@@ -30,4 +34,14 @@
   --small: 600px;
   --medium: 760px;
   --large: 960px;
+}
+
+.darkmode {
+  --v2-primary: #141f2a;
+  --v2-secondary: #f0efef;
+  --v2-tertiary: #68c8a8;
+  --v2-quaternary: #96bbaf;
+
+  --v2-primary-hover: #ffffff;
+  --layer-color: rgb(104, 243, 220);
 }
