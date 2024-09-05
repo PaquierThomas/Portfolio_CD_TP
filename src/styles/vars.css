@@ -11,9 +11,9 @@
 
   /* V2 site */
   --v2-primary: #f0efef;
-  --v2-secondary: #141f2a;
-  --v2-tertiary: #141f2a;
-  --v2-quaternary: #141f2a;
+  --v2-secondary: #323641;
+  --v2-tertiary: #323641;
+  --v2-quaternary: #323641; /* #141f2a a demander avec maelle*/
 
   --v2-primary-hover: #203142;
 
