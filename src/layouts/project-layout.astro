@@ -17,372 +17,464 @@ const { Content, ...props } = Astro.props
     <meta charset='utf-8' />
     <title>{props.title} {props.title2} - Thomas Paquier</title>
   </head>
-
-  <main class='main'>
-    <div class='nav'>
-      <div class='nav-content'>
-        <div class='top-left'>
-          <a href='/'>
-            <h3>THOMAS</h3>
-            <h3>PAQUIER</h3>
-          </a>
+  <body>
+    <button id='theme-switch'>
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        viewBox='0 -960 960 960'
+        fill='#e8eaed'
+        ><path
+          d='M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z'
+        ></path></svg
+      >
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        viewBox='0 -960 960 960'
+        fill='#e8eaed'
+      >
+        <path
+          d='M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z'
+        ></path>
+      </svg>
+    </button>
+    <main class='main'>
+      <div class='nav'>
+        <div class='nav-content'>
+          <div class='top-left'>
+            <a href='/'>
+              <h3>THOMAS</h3>
+              <h3>PAQUIER</h3>
+            </a>
+          </div>
+          <div class='top-right'>
+            <a href='#'>Drawing</a>
+            <a href='/contact'>Contact</a>
+          </div>
+          <div>
+            <a href='/projects'>
+              <h3>Browse Projects</h3>
+            </a>
+          </div>
         </div>
-        <div class='top-right'>
-          
-          <a href='#'>Drawing</a>
-          <a href='/contact'>Contact</a>
+      </div>
+
+      <section class='article'>
+        <div class='wrapper-titre'>
+          <div class='titles'>
+            <h2 class='first'>{props.title} <br /> {props.title2}</h2>
+          </div>
         </div>
-        <div><a href="/projects">
-          <h3>Browse Projects</h3>
-        </a></div>
-
-      </div>
-    </div>
-    <section class='article'>
-      <div class='wrapper-titre'>
-        <div class='titles'>
-          <h2 class='first'>{props.title} <br /> {props.title2}</h2>
+      </section>
+      <section class='about-project'>
+        <div class='text-left'>
+          <p class='paragraph-left'>Client<br /></p>
+          <p class='paragraph-left normal'>
+            {props.client}<br />
+          </p>
+          <p class='paragraph-left normal'><br /></p>
+          <p class='paragraph-left'>
+            year<br />
+          </p>
+          <div class='paragraph-left normal date'>
+            <p>{props.annee.debut}</p><span>-</span><p>{props.annee.fin}</p><br
+            />
+          </div>
+          <p class='paragraph-left'>
+            <br />
+          </p>
+          <p class='paragraph-left'>role<br /></p>
+          <ul class='paragraph-left normal'>
+            {props.roles?.map((role: string) => <li>{role}</li>)}
+          </ul>
         </div>
-      </div>
-    </section>
-    <section class='about-project'>
-      <div class='text-left'>
-        <p class='paragraph-left'>Client<br /></p>
-        <p class='paragraph-left normal'>
-          {props.client}<br />
-        </p>
-        <p class='paragraph-left normal'><br /></p>
-        <p class='paragraph-left'>
-          year<br />
-        </p>
-        <div class='paragraph-left normal date'>
-          <p>{props.annee.debut}</p><span>-</span><p>{props.annee.fin}</p><br />
+        <div class='text-right'>
+          <h1 class='h3-title'>{props.subject}</h1><p
+            class='h2-subheading cd small'
+          >
+            {props.summary}
+          </p>
         </div>
-        <p class='paragraph-left'>
-          <br />
-        </p>
-        <p class='paragraph-left'>role<br /></p>
-        <ul class='paragraph-left normal'>
-          {props.roles?.map((role: string) => <li>{role}</li>)}
-        </ul>
-      </div>
-      <div class='text-right'>
-        <h1 class='h3-title'>{props.subject}</h1><p
-          class='h2-subheading cd small'
-        >
-          {props.summary}
-        </p>
-      </div>
-    </section>
-    <section class='container'>
-      <div class='section_content'>
-        <slot/>
-        {props.sectionTitle && <ArticleSectionTitle {...props.sectionTitle} />}
-        {
-          props.videos &&
-            props.videos.map((video, index) => (
-              <ArticleVideo key={index} {...video} />
-            ))
-        }
-        {
-          props.images &&
-            props.images.map((image, index) => (
-              <ArticleImage key={index} {...image} />
-            ))
-        }
-        <!-- {props.image && <ArticleImage {...props.image} />} -->
-        {props.textblock && <ArticleTextBlock {...props.textblock} />}
-        {props.procons && <ArticleProsCons procons={props.procons} />}
-      </div>
-    </section>
+      </section>
+      <section class='container'>
+        <div class='section_content'>
+          <slot />
+          {
+            props.sectionTitle && (
+              <ArticleSectionTitle {...props.sectionTitle} />
+            )
+          }
+          {
+            props.videos &&
+              props.videos.map((video, index) => (
+                <ArticleVideo key={index} {...video} />
+              ))
+          }
+          {
+            props.images &&
+              props.images.map((image, index) => (
+                <ArticleImage key={index} {...image} />
+              ))
+          }
+          <!-- {props.image && <ArticleImage {...props.image} />} -->
+          {props.textblock && <ArticleTextBlock {...props.textblock} />}
+          {props.procons && <ArticleProsCons procons={props.procons} />}
+        </div>
+      </section>
+      <script type='text/javascript' defer>
+        document.addEventListener('DOMContentLoaded', () => {
+          const themeSwitch = document.getElementById('theme-switch')
+          let darkmode = localStorage.getItem('darkmode')
 
-  </main>
+          // Check dark mode on load
+          const enableDarkMode = () => {
+            document.body.classList.add('darkmode')
+            localStorage.setItem('darkmode', 'active')
+          }
 
-  <style define:vars={{ projectImage: `url(${props.imageCouverture})` }}>
-    body {
-      background: var(--bg-color);
-    }
+          const disableDarkMode = () => {
+            document.body.classList.remove('darkmode')
+            localStorage.removeItem('darkmode')
+          }
 
-    .container {
-      font-family: var(--article-font-family);
+          // Apply stored preference
+          if (darkmode === 'active') {
+            enableDarkMode()
+          }
 
-      display: flex;
-      justify-content: space-between;
-      flex-direction: column;
-      /* color: #e8e6e3;  pour le dark mode */
-      color: var(--text-color);
-      width: 1220px;
-      /* width: 1440px; for big screens */
-      max-width: 100%;
-      margin: 0 auto;
-      padding: 100px 110px;
-    }
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+          // Theme switch event listener
+          themeSwitch.addEventListener('click', () => {
+            darkmode = localStorage.getItem('darkmode')
+            darkmode !== 'active' ? enableDarkMode() : disableDarkMode()
+          })
+        })
+      </script>
+    </main>
 
-      padding: 120px 160px;
-      background-color: transparent;
-      z-index: 100;
-    }
-    .date {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      justify-content: center;
-
-      span {
+    <style define:vars={{ projectImage: `url(${props.imageCouverture})` }}>
+      #theme-switch {
         display: flex;
-        align-self: center;
-        padding-left: 55%;
-        font-weight: 700;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: 30px;
+        left: 30px;
+        height: 60px;
+        width: 60px;
+        padding: 10px;
+        border: 2px solid var(--v2-secondary);
+        border-radius: 50%;
+        background-color: var(--v2-primary);
+        cursor: pointer;
+        z-index: 1000;
       }
-    }
 
-    .nav-content {
-      position: relative;
-      height: 80%;
-      width: 90%;
-      color: var(--text-color);
-      font-family: aktiv-grotesk, sans-serif;
-      font-weight: 600;
-      text-transform: uppercase;
-      a {
-        text-decoration: none;
-        color: var(--text-color);
+      #theme-switch svg {
+        fill: var(--v2-secondary);
+        transition: transform 0.3s;
       }
-    }
-    .nav-content div:first-child {
-      position: absolute;
-      top: 0;
-      left: 0;
-      a > h3 {
-        font-size: 14px;
-        text-decoration: none;
+
+      #theme-switch:hover svg {
+        fill: var(--v2-primary-hover);
+        filter: drop-shadow(0 0 20px var(--v2-primary-hover));
+      }
+
+      #theme-switch svg:last-child {
+        display: none;
+      }
+
+      .darkmode #theme-switch svg:first-child {
+        display: none;
+      }
+
+      .darkmode #theme-switch svg:last-child {
+        display: block;
+      }
+      body {
+        background: var(--v2-primary);
+      }
+
+      .container {
+        font-family: var(--article-font-family);
+
         display: flex;
+        justify-content: space-between;
         flex-direction: column;
-        letter-spacing: 5px;
+        /* color: #e8e6e3;  pour le dark mode */
+        color: var(--v2-secondary);
+        width: 1220px;
+        /* width: 1440px; for big screens */
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 100px 110px;
+      }
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        padding: 120px 160px;
+        background-color: transparent;
         z-index: 100;
       }
-    }
-    .nav-content div:nth-child(2) {
-      position: absolute;
-      top: 0;
-      right: 0;
-      font-size: 12px;
-      letter-spacing: 1.4px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      justify-content: flex-end;
-    }
+      .date {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
 
-    .nav-content div:nth-child(3){
-  
+        span {
+          display: flex;
+          align-self: center;
+          padding-left: 55%;
+          font-weight: 700;
+        }
+      }
+
+      .nav-content {
+        position: relative;
+        height: 80%;
+        width: 90%;
+        color: var(--v2-secondary);
+        font-family: aktiv-grotesk, sans-serif;
+        font-weight: 600;
+        text-transform: uppercase;
+        a {
+          text-decoration: none;
+          color: var(--v2-secondary);
+        }
+        a:hover {
+          color: var(--v2-primary-hover);
+          filter: drop-shadow(0 0 20px var(--v2-primary-hover));
+        }
+      }
+      .nav-content div:first-child {
+        position: absolute;
+        top: 0;
+        left: 0;
+        a > h3 {
+          font-size: 14px;
+          text-decoration: none;
+          display: flex;
+          flex-direction: column;
+          letter-spacing: 5px;
+          z-index: 100;
+        }
+      }
+      .nav-content div:nth-child(2) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 12px;
+        letter-spacing: 1.4px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: flex-end;
+      }
+
+      .nav-content div:nth-child(3) {
         position: absolute;
         bottom: -30px;
         left: 0;
-       font-size: 14px;
-      letter-spacing: 1.4px;
-      /* text-transform: none; */
-    }
-    .section_content {
-      display: flex;
-      flex-direction: column;
-      max-width: 960px;
-      margin: 0 auto;
-      gap: 60px;
-      z-index: 1000;
-    }
-    .article {
-      background-image: var(--projectImage);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 99vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-    .article::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.2);
-      z-index: 1;
-    }
-
-    .wrapper-titre {
-      font-family: aktiv-grotesk, sans-serif;
-      position: relative;
-      height: 60%;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .titles {
-      height: 100%;
-      width: 35%;
-      left: 13%;
-      text-transform: uppercase;
-    }
-
-    .titles h2 {
-      font-family: aktiv-grotesk-extended, sans-serif;
-      font-weight: 800;
-      font-size: 5vw;
-      color: var(--text-color);
-      font-style: normal;
-      letter-spacing: 0;
-      position: absolute;
-      line-height: 110%;
-      top: 52%;
-      left: 15%;
-      transform: translateY(-50%);
-      z-index: 5;
-    }
-
-    /* About de l'article la où toutes les infos sont mises (client, année, role, etc) */
-    .paragraph-left {
-      margin-bottom: 0px;
-      padding-bottom: 2px;
-      align-self: stretch;
-      flex: 1;
-      font-family: Proximanova, sans-serif;
-      color: var(--text-color);
-      font-size: 12px;
-      line-height: 1.6;
-      font-weight: 800;
-      text-align: right;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    .paragraph-left.normal {
-      padding-bottom: 4px;
-      font-family: Proximanova, sans-serif;
-      color: var(--text-color);
-      line-height: 1.5;
-      font-weight: 300;
-    }
-
-    .paragraph-right {
-      margin-bottom: 0px;
-      padding-right: 40px;
-      padding-bottom: 20px;
-
-      align-self: stretch;
-
-      flex: 1;
-      font-family: Inter, sans-serif;
-      font-weight: 700;
-    }
-
-    .text-left {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      /* width: 300px; */
-      padding-top: 10px;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: center;
-      align-self: space-between;
-    }
-
-    .text-right {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-
-      max-width: 700px;
-
-      flex-direction: column;
-
-      justify-content: center;
-
-      align-items: flex-start;
-
-      align-self: flex-start;
-    }
-
-    .about-project {
-      position: relative;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      gap: 3rem;
-      margin: 0 auto;
-      z-index: 0;
-      height: auto;
-      max-width: 1000px;
-      margin-top: 80px;
-      /* margin-bottom: 100px; */
-      padding-left: 100px;
-
-      /* justify-content: center; */
-      text-align: left;
-    }
-    .h3-title {
-      margin-top: 0px;
-      padding-bottom: 10px;
-      align-self: flex-start;
-      flex: 0 auto;
-      font-family: Recoleta, Georgia, sans-serif;
-      color: var(--text-color);
-      font-size: 62px;
-      line-height: 1.1;
-    }
-    .h2-subheading {
-      line-height: 1.6;
-      letter-spacing: 0.2px;
-    }
-
-    .h2-subheading.cd {
-      max-width: 700px;
-      padding-top: 0px;
-      padding-right: 60px;
-      padding-left: 0px;
-      font-family: Proximanova, sans-serif;
-      font-size: 19px;
-      font-weight: 200;
-      color: var(--text-color);
-    }
-
-    .h2-subheading.cd.small {
-      max-width: 700px;
-      padding-top: 10px;
-      font-weight: 100;
-      align-self: flex-start;
-
-      flex: 1;
-    }
-    .section_content h2{
-      font-size: 32px;
-    }
-
-    @media only screen and (max-width: 1599px) {
-      .nav {
-        padding: 80px 80px;
+        font-size: 14px;
+        letter-spacing: 1.4px;
+        /* text-transform: none; */
       }
-      .section_content{
-        max-width: 900px;
+      .section_content {
+        display: flex;
+        flex-direction: column;
+        max-width: 960px;
+        margin: 0 auto;
+        gap: 60px;
+        z-index: 1000;
       }
-    }
-  </style>
+      .article {
+        background-image: var(--projectImage);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 99vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+      .article::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
 
+      .wrapper-titre {
+        font-family: aktiv-grotesk, sans-serif;
+        position: relative;
+        height: 60%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
+      .titles {
+        height: 100%;
+        width: 35%;
+        left: 13%;
+        text-transform: uppercase;
+      }
+
+      .titles h2 {
+        font-family: aktiv-grotesk-extended, sans-serif;
+        font-weight: 800;
+        font-size: 5vw;
+        color: var(--text-color);
+        font-style: normal;
+        letter-spacing: 0;
+        position: absolute;
+        line-height: 110%;
+        top: 52%;
+        left: 15%;
+        transform: translateY(-50%);
+        z-index: 5;
+      }
+
+      /* About de l'article la où toutes les infos sont mises (client, année, role, etc) */
+      .paragraph-left {
+        margin-bottom: 0px;
+        padding-bottom: 2px;
+        align-self: stretch;
+        flex: 1;
+        font-family: Proximanova, sans-serif;
+        color: var(--v2-secondary);
+        font-size: 12px;
+        line-height: 1.6;
+        font-weight: 800;
+        text-align: right;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+
+      .paragraph-left.normal {
+        padding-bottom: 4px;
+        font-family: Proximanova, sans-serif;
+        color: var(--v2-secondary);
+        line-height: 1.5;
+        font-weight: 300;
+      }
+
+      .paragraph-right {
+        margin-bottom: 0px;
+        padding-right: 40px;
+        padding-bottom: 20px;
+
+        align-self: stretch;
+
+        flex: 1;
+        font-family: Inter, sans-serif;
+        font-weight: 700;
+      }
+
+      .text-left {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        /* width: 300px; */
+        padding-top: 10px;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        align-self: space-between;
+      }
+
+      .text-right {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+
+        max-width: 700px;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        align-items: flex-start;
+
+        align-self: flex-start;
+      }
+
+      .about-project {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 3rem;
+        margin: 0 auto;
+        z-index: 0;
+        height: auto;
+        max-width: 1000px;
+        margin-top: 80px;
+        /* margin-bottom: 100px; */
+        padding-left: 100px;
+
+        /* justify-content: center; */
+        text-align: left;
+      }
+      .h3-title {
+        margin-top: 0px;
+        padding-bottom: 10px;
+        align-self: flex-start;
+        flex: 0 auto;
+        font-family: Recoleta, Georgia, sans-serif;
+        color: var(--v2-secondary);
+        font-size: 62px;
+        line-height: 1.1;
+      }
+      .h2-subheading {
+        line-height: 1.6;
+        letter-spacing: 0.2px;
+      }
+
+      .h2-subheading.cd {
+        max-width: 700px;
+        padding-top: 0px;
+        padding-right: 60px;
+        padding-left: 0px;
+        font-family: Proximanova, sans-serif;
+        font-size: 19px;
+        font-weight: 200;
+        color: var(--v2-secondary);
+      }
+
+      .h2-subheading.cd.small {
+        max-width: 700px;
+        padding-top: 10px;
+        font-weight: 100;
+        align-self: flex-start;
+
+        flex: 1;
+      }
+      .section_content h2 {
+        font-size: 32px;
+      }
+
+      @media only screen and (max-width: 1599px) {
+        .nav {
+          padding: 80px 80px;
+        }
+        .section_content {
+          max-width: 900px;
+        }
+      }
+    </style>
+  </body>
 </html>

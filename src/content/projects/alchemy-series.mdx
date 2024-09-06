@@ -34,9 +34,12 @@ import ArticleSectionTitle from '../../components/article-section-title.astro'
 import ArticleVideo from '../../components/article-video.astro'
 import ArticleShortTextBlock from '../../components/article-short-text-block.astro'
 
-<ArticleSectionTitle
-  title='First inspiration'
-  shortDescription='It all begin when i made the battery animation tutorial of polygon runway. I then decided to make some projects with fluids and particles in blender.'
+<ArticleShortTextBlock
+  title={{
+    highlightTitle: 'First ',
+    secondPartTitle: 'inspiration',
+  }}
+  summary='It all begin when i made the battery animation tutorial of polygon runway. I then decided to make some projects with fluids and particles in blender.'
 />
 <ArticleVideo
   src=' /image-article/alchemy-series/battery_anim.mp4'

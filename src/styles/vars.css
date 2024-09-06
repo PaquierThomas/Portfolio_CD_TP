@@ -15,6 +15,8 @@
   --v2-tertiary: #323641;
   --v2-quaternary: #323641; /* #141f2a a demander avec maelle*/
 
+  --v2-alchemy: #45803f;
+
   --v2-primary-hover: #203142;
 
   --v2-primary-font: 'Gilroy', sans-serif;
@@ -43,6 +45,8 @@
   --v2-secondary: #f0efef;
   --v2-tertiary: #68c8a8;
   --v2-quaternary: #96bbaf;
+
+  --v2-alchemy: #b2ffa9;
 
   --layer-color: 104, 243, 220;
 

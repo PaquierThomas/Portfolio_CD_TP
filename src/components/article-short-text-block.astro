@@ -7,7 +7,7 @@ import type { Project } from '../content/config'
 
 type Props = Project['short-textblock'] & {}
 
-const { title, summary, } = Astro.props
+const { title, summary } = Astro.props
 ---
 
 <div class='section_content'>
@@ -18,7 +18,6 @@ const { title, summary, } = Astro.props
   <p class='section_summary'>
     {summary}
   </p>
-  
 </div>
 
 <style scoped>
@@ -28,7 +27,7 @@ const { title, summary, } = Astro.props
     line-height: 60px;
   }
   .section_title span {
-    color: var(--primary-color);
+    color: rgba(var(--layer-color), 1);
   }
 
   .section_content {
