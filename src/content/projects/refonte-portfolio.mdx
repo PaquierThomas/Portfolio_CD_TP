@@ -33,10 +33,14 @@ procons:
 import ArticleImage from '../../components/article-image.astro'
 import ArticleSectionTitle from '../../components/article-section-title.astro'
 import ArticleVideo from '../../components/article-video.astro'
+import ArticleShortTextBlock from '../../components/article-short-text-block.astro'
 
-<ArticleSectionTitle
-  title='Old website'
-  shortDescription="The old website was a static site, with a very simple design, coded in 2 days, with a user interface that wasn't very refined, and not a very engaging user experience."
+<ArticleShortTextBlock
+  title={{
+    highlightTitle: ' ',
+    secondPartTitle: 'Old website',
+  }}
+  summary="The old website was a static site, with a very simple design, coded in 2 days, with a user interface that wasn't very refined, and not a very engaging user experience."
 />
 
 <ArticleImage
@@ -44,9 +48,12 @@ import ArticleVideo from '../../components/article-video.astro'
   caption='Mono-page old website'
 />
 
-<ArticleSectionTitle
-  title='The New replace the old'
-  shortDescription="The new website is a dynamic site, with a more polished design, coded over several months, featuring a more refined user interface, and a more engaging user experience. Additionally, I've implemented automations to create articles quickly and efficiently. This better reflects my current level."
+<ArticleShortTextBlock
+  title={{
+    highlightTitle: ' ',
+    secondPartTitle: 'The New replace the old',
+  }}
+  summary="The new website is a dynamic site, with a more polished design, coded over several months, featuring a more refined user interface, and a more engaging user experience. Additionally, I've implemented automations to create articles quickly and efficiently. This better reflects my current level."
 />
 
 <ArticleImage

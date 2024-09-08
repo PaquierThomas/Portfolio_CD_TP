@@ -32,9 +32,12 @@ import ArticleSectionTitle from '../../components/article-section-title.astro'
 import ArticleVideo from '../../components/article-video.astro'
 import ArticleShortTextBlock from '../../components/article-short-text-block.astro'
 
-<ArticleSectionTitle
-  title='First Section'
-  shortDescription='The initial section sets the mood for players and gives them a glimpse of what to expect as they venture further into the level, game.'
+<ArticleShortTextBlock
+  title={{
+    highlightTitle: ' ',
+    secondPartTitle: 'First Section',
+  }}
+  summary='The initial section sets the mood for players and gives them a glimpse of what to expect as they venture further into the level, game.'
 />
 
 <ArticleImage
@@ -54,11 +57,13 @@ import ArticleShortTextBlock from '../../components/article-short-text-block.ast
   caption="Guard's rest place"
 />
 
-<ArticleSectionTitle
-  title='Crypt Section'
-  shortDescription='I wanted to give players a different vibe by taking them to a mysterious and intricate space, kind of like a crypt.'
+<ArticleShortTextBlock
+  title={{
+    highlightTitle: ' ',
+    secondPartTitle: 'Crypt Section',
+  }}
+  summary='I wanted to give players a different vibe by taking them to a mysterious and intricate space, kind of like a crypt.'
 />
-
 <ArticleImage
   src='/image-article/knight-lost-tale/couloir_acces_crypte2.webp'
   caption='Crypt corridor'

@@ -13,24 +13,27 @@ const props = Astro.props
 
 <div>
   {/* Styliser le container  */}
-  {props.procons.map((procon: any, index: number) => (
-    <div>
-      <div class='section_row'>
-        <div class='section_row_title'>
-          <h3>{procon.title}</h3>
-          <img src={procon.image} alt="icone d'un plus" />
+  {
+    props.procons.map((procon: any, index: number) => (
+      <div>
+        <div class='section_row'>
+          <div class='section_row_title'>
+            <h3>{procon.title}</h3>
+            <img src={procon.image} alt="icone d'un plus" />
+          </div>
+          <div class='section_row_description'>
+            {procon.list?.map((text: string) => (
+              <li>{text}</li>
+            ))}
+            {procon.paragraph}
+            <slot />
+          </div>
         </div>
-        <div class='section_row_description'>
-          {procon.list?.map((text: string) => (
-            <li>{text}</li>
-          ))}
-          {procon.paragraph}
-          <slot />
-        </div>
+        {index !== props.procons.length - 1 && <hr />}{' '}
+        {/* Render hr except for the last item */}
       </div>
-      {index !== props.procons.length - 1 && <hr/>} {/* Render hr except for the last item */}
-    </div>
-  ))}
+    ))
+  }
 </div>
 
 <style scoped>
@@ -76,6 +79,5 @@ const props = Astro.props
 
   hr.solid {
     border-top: 1px #383d40;
-    
   }
 </style>
