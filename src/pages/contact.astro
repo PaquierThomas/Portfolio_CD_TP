@@ -1,6 +1,10 @@
 ---
 import BaseLayout from '../layouts/base-layout.astro'
 import '../styles/global.css'
+import Instagram from '../../public/icons/instagram.astro'
+import Mail from '../../public/icons/mail.astro'
+import Artstation from '../../public/icons/artstation.astro'
+import Phone from '../../public/icons/phone.astro'
 ---
 
 <BaseLayout
@@ -58,19 +62,11 @@ import '../styles/global.css'
       </div>
       <div class='bottom'>
         <div class='contact'>
-          <img
-            src='/icons/phone.svg'
-            alt='logo du téléphone'
-            class='rectangle'
-          />
+          <Phone class='rectangle' />
           <h3><a href='tel:+33783798945'>07 83 79 89 45</a></h3>
         </div>
         <div class='contact'>
-          <img
-            src='/icons/mail.svg'
-            alt='logo de artstation'
-            class='rectangle'
-          />
+          <Mail class='rectangle' />
           <h3>
             <a href='mailto:thomas.paquier.pro@gmail.com'
               >thomas.paquier.pro@gmail.com</a
@@ -78,11 +74,7 @@ import '../styles/global.css'
           </h3>
         </div>
         <div class='contact'>
-          <img
-            src='/icons/artstation.svg'
-            alt='logo de artstation'
-            class='rectangle'
-          />
+          <Artstation class='rectangle' />
           <h3>
             <a href='https://www.artstation.com/thomas_paquier' target='_blank'
               >thomas_paquier</a
@@ -90,11 +82,7 @@ import '../styles/global.css'
           </h3>
         </div>
         <div class='contact'>
-          <img
-            src='/icons/instagram.svg'
-            alt='logo de instagram'
-            class='rectangle'
-          />
+          <Instagram class='rectangle' />
           <h3>
             <a href='https://www.instagram.com/thomas_paquier' target='_blank'
               >@thomas_paquier</a
@@ -282,6 +270,8 @@ import '../styles/global.css'
         height: 30px;
         border-radius: 5px;
         margin-right: 10px;
+
+        fill: var(--v2-tertiary);
       }
 
       h3 {
